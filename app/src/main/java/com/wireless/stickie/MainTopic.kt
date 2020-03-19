@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import com.google.firebase.auth.FirebaseAuth
-import com.wireless.stickie.ui.login.LoginActivity
+import com.wireless.stickie.LoginActivity
 import kotlinx.android.synthetic.main.activity_main_topic.*
 import org.jetbrains.anko.toast
 
