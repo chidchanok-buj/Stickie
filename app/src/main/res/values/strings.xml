@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Lickie Stickie</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome">Welcome !</string>
+    <string name="description">Get a better understanding about computer network.</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="sign_in_description">To restore your goals, progress, and performance you will need to sign in</string>
+    <string name="sign_in_header">It\'s a pleasure to see you again :)</string>
+    <string name="sign_up_header">Create An Account</string>
+    <string name="sign_up_with">Sign up with</string>
+    <string name="start_journey">Then start your journey with Lickie Stickie</string>
+    <string name="or">or</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="sign_up_with_email">Sign Up With Email</string>
+    <string name="agreement">By signing up, you agree to our Terms of Service and Privacy Policy</string>
+    <string name="member">Already member ?</string>
+</resources>

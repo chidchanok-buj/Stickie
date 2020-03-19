@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "911793488251",
+    "firebase_url": "https://stickie-2d6f6.firebaseio.com",
+    "project_id": "stickie-2d6f6",
+    "storage_bucket": "stickie-2d6f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911793488251:android:f07b7fc032112b72bc3dde",
+        "android_client_info": {
+          "package_name": "com.wireless.stickie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911793488251-4i719d3mjjn7tthhl4rduugk5f3gm83h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wireless.stickie",
+            "certificate_hash": "5ab7b785ecc5029630e00b02da41ba30e8acaf3f"
+          }
+        },
+        {
+          "client_id": "911793488251-u70uq4njn5fhjitleq3g14n367di6pha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0sMli4Y-QBamR41RgBvMaWoI6sTZ1ujY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911793488251-u70uq4njn5fhjitleq3g14n367di6pha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
