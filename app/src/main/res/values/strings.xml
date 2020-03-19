@@ -10,7 +10,7 @@
     <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_password">Password must have minimum 6 characters.</string>
     <string name="login_failed">"Login failed"</string>
     <string name="sign_in_description">To restore your goals, progress, and performance you will need to sign in</string>
     <string name="sign_in_header">It\'s a pleasure to see you again :)</string>
