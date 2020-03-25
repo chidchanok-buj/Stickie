@@ -69,7 +69,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_password"
-        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
-        android:id="@+id/sign_in_desciption"
+        android:id="@+id/sign_in_description"
         android:layout_width="294dp"
         android:layout_height="49dp"
         android:layout_marginStart="43dp"

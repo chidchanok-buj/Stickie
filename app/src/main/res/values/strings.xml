@@ -23,4 +23,10 @@
     <string name="sign_up_with_email">Sign Up With Email</string>
     <string name="agreement">By signing up, you agree to our Terms of Service and Privacy Policy</string>
     <string name="member">Already member ?</string>
+    <string name="ComputerNetwork">Computer Network</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="congestion_control_topic">TCP Congestion Control</string>
+    <string name="routing_protocols_topic">Routing Protocols</string>
+    <string name="arqs_topic">ARQs</string>
+    <string name="model_layer_topic"><![CDATA[TCP / IP & OSI Model]]></string>
 </resources>

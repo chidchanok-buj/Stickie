@@ -6,87 +6,142 @@
     android:layout_height="match_parent"
     tools:context=".MainTopic">
 
-    <ImageView
-        android:id="@+id/main_appLogo"
-        android:layout_width="385dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/result_emailLabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="328dp"-->
+    <!--        android:fontFamily="Roboto"-->
+    <!--        android:text="Email: "-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/result_uidLabel"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.443"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageButton
-        android:id="@+id/result_backBtn"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:backgroundTint="@android:color/transparent"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="VectorDrawableCompat" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/result_emailData"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:fontFamily="Roboto"-->
+    <!--        android:text="email"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/result_emailLabel"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/result_emailLabel" />-->
 
-    <TextView
-        android:id="@+id/result_emailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="268dp"
-        android:fontFamily="Roboto"
-        android:text="Email: "
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_appLogo" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/result_uidLabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="156dp"-->
+    <!--        android:fontFamily="Roboto"-->
+    <!--        android:text="UID:"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/result_emailLabel" />-->
 
-    <TextView
-        android:id="@+id/result_emailData"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:fontFamily="Roboto"
-        android:text="email"
-        app:layout_constraintBaseline_toBaselineOf="@+id/result_emailLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/result_emailLabel" />
-
-    <TextView
-        android:id="@+id/result_uidLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="Roboto"
-        android:text="UID:"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_emailLabel" />
-
-    <TextView
-        android:id="@+id/result_uidData"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="uid"
-        app:layout_constraintBaseline_toBaselineOf="@+id/result_uidLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/result_uidLabel" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/result_uidData"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:text="uid"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/result_uidLabel"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/result_uidLabel" />-->
 
     <Button
         android:id="@+id/result_signOutBtn"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:fontFamily="Roboto"
-        android:text="Sign out"
+        android:text="@string/sign_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="@string/welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/ComputerNetwork"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/prompt_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <Button
+        android:id="@+id/model_layer"
+        android:layout_width="297dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_orange_button"
+        android:text="@string/model_layer_topic"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/arqs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/arqs"
+        android:layout_width="297dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_yellow_button"
+        android:text="@string/arqs_topic"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/routing_protocol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/routing_protocol"
+        android:layout_width="297dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_green_button"
+        android:text="@string/routing_protocols_topic"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/congestion_control"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/congestion_control"
+        android:layout_width="297dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/rounded_blue_button"
+        android:text="@string/congestion_control_topic"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

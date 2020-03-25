@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.toast
 
@@ -17,6 +18,7 @@ class SignUp : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
     private val TAG: String = "Sign Up Activity"
+    private var mAuthListener: FirebaseAuth.AuthStateListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +60,8 @@ class SignUp : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
+
             mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (!task.isSuccessful) {
                     if (password.length < 6) {
@@ -70,6 +74,13 @@ class SignUp : AppCompatActivity() {
                 } else {
                     toast("Successfully create your account!")
                     Log.d(TAG, "Successfully create an account.")
+                    val user = mAuth!!.currentUser
+                    val profile =
+                        UserProfileChangeRequest.Builder().setDisplayName(firstName).build()
+                    user!!.updateProfile(profile)
+//                    var user = mAuth!!.currentUser
+//                    val profile = UserProfileChangeRequest.Builder().setDisplayName(firstName).build()
+//                    user!!.updateProfile(profile)
                     startActivity(Intent(this@SignUp, MainTopic::class.java))
                 }
             }

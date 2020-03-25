@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import com.google.firebase.auth.FirebaseAuth
-import com.wireless.stickie.LoginActivity
 import kotlinx.android.synthetic.main.activity_main_topic.*
 import org.jetbrains.anko.toast
 
@@ -23,8 +22,8 @@ class MainTopic : AppCompatActivity() {
 
         val user = mAuth!!.currentUser
 
-        result_emailData.text = user!!.email
-        result_uidData.text = user.uid
+        displayName.text = user!!.displayName
+//        result_uidData.text = user.uid
 
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users = firebaseAuth.currentUser
