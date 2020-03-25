@@ -23,7 +23,6 @@ class MainTopic : AppCompatActivity() {
         val user = mAuth!!.currentUser
 
         displayName.text = user!!.displayName
-//        result_uidData.text = user.uid
 
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users = firebaseAuth.currentUser
