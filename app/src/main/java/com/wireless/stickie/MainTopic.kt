@@ -32,6 +32,26 @@ class MainTopic : AppCompatActivity() {
             }
         }
 
+        model_layer.setOnClickListener {
+            val intent = Intent(this, ModelLayerActivity::class.java)
+            startActivity(intent)
+        }
+
+        arqs.setOnClickListener {
+            val intent = Intent(this, arqsActivity::class.java)
+            startActivity(intent)
+        }
+
+        routing_protocol.setOnClickListener {
+            val intent = Intent(this, RoutingProtocolsActivity::class.java)
+            startActivity(intent)
+        }
+
+        congestion_control.setOnClickListener {
+            val intent = Intent(this, CongestionControlActivity::class.java)
+            startActivity(intent)
+        }
+
         result_signOutBtn.setOnClickListener {
             mAuth!!.signOut()
             toast("Signed Out")

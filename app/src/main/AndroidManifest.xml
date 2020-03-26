@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainTopic"></activity>
+        <activity android:name=".CongestionControlActivity"></activity>
+        <activity android:name=".RoutingProtocolsActivity" />
+        <activity android:name=".arqsActivity" />
+        <activity android:name=".ModelLayerActivity" />
+        <activity android:name=".MainTopic" />
         <activity android:name=".SignUp" />
         <activity
-            android:name="LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".MainActivity">
             <intent-filter>

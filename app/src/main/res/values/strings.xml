@@ -29,4 +29,8 @@
     <string name="routing_protocols_topic">Routing Protocols</string>
     <string name="arqs_topic">ARQs</string>
     <string name="model_layer_topic"><![CDATA[TCP / IP & OSI Model]]></string>
+    <string name="learning">Learning</string>
+    <string name="exercise">Exercise</string>
+    <string name="quiz">Quiz</string>
+    <string name="score">Score</string>
 </resources>
