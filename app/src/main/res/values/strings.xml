@@ -33,4 +33,9 @@
     <string name="exercise">Exercise</string>
     <string name="quiz">Quiz</string>
     <string name="score">Score</string>
+    <string name="application">Application Layer</string>
+    <string name="transport">Transport Layer</string>
+    <string name="network">Network Layer</string>
+    <string name="data">Data Link Layer</string>
+    <string name="physical">Physical Layer</string>
 </resources>
