@@ -57,43 +57,43 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <Button
-        android:id="@+id/model_layer"
+        android:id="@+id/model_layer_learning"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_orange_button"
         android:text="@string/model_layer_topic"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/arqs"
+        app:layout_constraintBottom_toTopOf="@+id/model_layer_exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/arqs"
+        android:id="@+id/model_layer_exercise"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_yellow_button"
         android:text="@string/arqs_topic"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/routing_protocol"
+        app:layout_constraintBottom_toTopOf="@+id/model_layer_quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/routing_protocol"
+        android:id="@+id/model_layer_quiz"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_green_button"
         android:text="@string/routing_protocols_topic"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/congestion_control"
+        app:layout_constraintBottom_toTopOf="@+id/model_layer_score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/congestion_control"
+        android:id="@+id/model_layer_score"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="156dp"
