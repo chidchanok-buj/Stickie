@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_shuffle_o_s_i.*
 
 
-class ShuffleOSI : AppCompatActivity(), OnStartDragListener {
+class ShuffleLayer : AppCompatActivity(), OnStartDragListener {
 
     lateinit var adapter: DragDropRecyclerAdapter
     lateinit var touchHelper: ItemTouchHelper

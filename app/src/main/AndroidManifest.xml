@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wireless.stickie" >
+    package="com.wireless.stickie">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,42 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".ShuffleOSI" >
-        </activity>
-        <activity android:name=".tcpLayersLearning" />
-        <activity android:name=".CongestionControlActivity" />
-        <activity android:name=".RoutingProtocolsActivity" />
-        <activity android:name=".arqsActivity" />
-        <activity android:name=".ModelLayerActivity" />
-        <activity android:name=".MainTopic" />
-        <activity android:name=".SignUp" />
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".arqs_learning_slidingwindow_2"
+            android:label="@string/learning"/>
+        <activity
+            android:name=".arqs_learning_slidingwindow"
+            android:label="@string/learning"/>
+        <activity
+            android:name=".ShuffleLayer"
+            android:label="@string/exercise"/>
+        <activity
+            android:name=".tcpLayersLearning" />
+        <activity
+            android:name=".CongestionControlActivity"
+            android:label="@string/congestion_control_topic"/>
+        <activity
+            android:name=".RoutingProtocolsActivity"
+            android:label="@string/routing_protocols_topic"/>
+        <activity
+            android:name=".arqsActivity"
+            android:label="@string/arqs_topic"
+            />
+        <activity
+            android:name=".ModelLayerActivity"
+            android:label="@string/model_layer_topic"/>
+        <activity
+            android:name=".MainTopic" />
+        <activity
+            android:name=".SignUp"
+            android:label="@string/title_activity_Sign_up" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

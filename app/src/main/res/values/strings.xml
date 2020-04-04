@@ -4,7 +4,8 @@
     <string name="sign_up">Sign Up</string>
     <string name="welcome">Welcome !</string>
     <string name="description">Get a better understanding about computer network.</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Sign In</string>
+    <string name="title_activity_Sign_up">Sign Up</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
@@ -38,4 +39,13 @@
     <string name="network">Network Layer</string>
     <string name="data">Data Link Layer</string>
     <string name="physical">Physical Layer</string>
+    <string name="whatIsARQs">ARQs or Automatic Repeat reQuest is an error-control method for data transmission that uses acknowledgements (messages sent by the receiver indicating that it has correctly received a packet) and timeouts (specified periods of time allowed to elapse before an acknowledgment is to be received) to achieve reliable data transmission over an unreliable service.</string>
+    <string name="slidingWindow">Sliding Window</string>
+    <string name="next">Next</string>
+    <string name="tab">\u0009</string>
+    <string name="flowControl">Flow Control</string>
+    <string name="flowControlDes">Typically, it requires the consumer to update its ability to the producer periodically.
+        \n\n“Feedback” system: Tell the sender how much more data can the receiver consume</string>
+    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control</string>
+    <string name="back">Back</string>
 </resources>

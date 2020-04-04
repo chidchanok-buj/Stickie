@@ -32,22 +32,22 @@ class MainTopic : AppCompatActivity() {
             }
         }
 
-        model_layer_learning.setOnClickListener {
+        arqs_learning.setOnClickListener {
             val intent = Intent(this, ModelLayerActivity::class.java)
             startActivity(intent)
         }
 
-        model_layer_exercise.setOnClickListener {
+        arqs_exercise.setOnClickListener {
             val intent = Intent(this, arqsActivity::class.java)
             startActivity(intent)
         }
 
-        model_layer_quiz.setOnClickListener {
+        arqs_quiz.setOnClickListener {
             val intent = Intent(this, RoutingProtocolsActivity::class.java)
             startActivity(intent)
         }
 
-        model_layer_score.setOnClickListener {
+        arqs_score.setOnClickListener {
             val intent = Intent(this, CongestionControlActivity::class.java)
             startActivity(intent)
         }

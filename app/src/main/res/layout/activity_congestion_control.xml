@@ -21,43 +21,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/model_layer_learning"
+        android:id="@+id/arqs_learning"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/learning"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/model_layer_exercise"
+        app:layout_constraintBottom_toTopOf="@+id/arqs_exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/model_layer_exercise"
+        android:id="@+id/arqs_exercise"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/exercise"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/model_layer_quiz"
+        app:layout_constraintBottom_toTopOf="@+id/arqs_quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/model_layer_quiz"
+        android:id="@+id/arqs_quiz"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/quiz"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/model_layer_score"
+        app:layout_constraintBottom_toTopOf="@+id/arqs_score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/model_layer_score"
+        android:id="@+id/arqs_score"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="156dp"
