@@ -46,6 +46,16 @@
     <string name="flowControl">Flow Control</string>
     <string name="flowControlDes">Typically, it requires the consumer to update its ability to the producer periodically.
         \n\n“Feedback” system: Tell the sender how much more data can the receiver consume</string>
-    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control</string>
+    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control </string>
     <string name="back">Back</string>
+    <string name="routingDes">A routing protocol specifies how routers communicate with each other to distribute information that enables them to select routes between any two nodes on a computer network. Routers perform the "traffic directing" functions on the Internet; data packets are forwarded through the networks of the internet from</string>
+    <string name="routingDes2">router to router until they reach their destination computer.  Routing algorithms determine the specific choice of route. \n</string>
+    <string name="ripTopic">Routing Information Protocol\nRIP</string>
+    <string name="ripDes">DV algorithm with hop count as metric
+\n -  Infinity value is 16 hops; limits network size
+\n -  Includes split horizon with poison reverse
+\n\nRouters send vectors every 30 seconds
+\n -  With triggered updates for link failures
+\n -  Time-out in 180 seconds to detect failures
+</string>
 </resources>

@@ -47,6 +47,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".routing_learning" />
+        <activity android:name=".routing_rip" />
     </application>
 
 </manifest>

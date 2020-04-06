@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".arqs_learning_slidingwindow">
 
+
     <TextView
         android:id="@+id/topic"
         android:layout_width="wrap_content"
@@ -14,14 +15,15 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="323dp"
-        android:layout_height="153dp"
+        android:layout_width="345dp"
+        android:layout_height="225dp"
         android:layout_marginTop="48dp"
         android:lineSpacingMultiplier="1.5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +32,7 @@
 
     <TextView
         android:id="@+id/description2"
-        android:layout_width="323dp"
+        android:layout_width="345dp"
         android:layout_height="153dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,4 +48,14 @@
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

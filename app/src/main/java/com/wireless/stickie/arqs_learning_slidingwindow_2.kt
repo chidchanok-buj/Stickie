@@ -20,6 +20,10 @@ class arqs_learning_slidingwindow_2 : AppCompatActivity(){
             val intent = Intent(this, arqs_learning_slidingwindow::class.java)
             startActivity(intent)
         }
+//        next.setOnClickListener{
+//            val intent = Intent(this, arqs_learning_slidingwindow::class.java)
+//            startActivity(intent)
+//        }
 
     }
 }
