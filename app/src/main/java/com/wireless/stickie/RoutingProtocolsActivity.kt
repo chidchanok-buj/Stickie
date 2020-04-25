@@ -15,5 +15,9 @@ class RoutingProtocolsActivity : AppCompatActivity() {
             val intent = Intent(this, routing_learning::class.java)
             startActivity(intent)
         }
+        arqs_quiz.setOnClickListener{
+            val intent = Intent(this, CategoryQuiz::class.java)
+            startActivity(intent)
+        }
     }
 }

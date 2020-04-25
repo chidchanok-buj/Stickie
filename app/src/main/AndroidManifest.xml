@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wireless.stickie">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,32 +10,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ResultActivity" />
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/title_activity_question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CategoryQuiz" />
         <activity
             android:name=".arqs_learning_slidingwindow_2"
-            android:label="@string/learning"/>
+            android:label="@string/learning" />
         <activity
             android:name=".arqs_learning_slidingwindow"
-            android:label="@string/learning"/>
+            android:label="@string/learning" />
         <activity
             android:name=".ShuffleLayer"
-            android:label="@string/exercise"/>
-        <activity
-            android:name=".tcpLayersLearning" />
+            android:label="@string/exercise" />
+        <activity android:name=".tcpLayersLearning" />
         <activity
             android:name=".CongestionControlActivity"
-            android:label="@string/congestion_control_topic"/>
+            android:label="@string/congestion_control_topic" />
         <activity
             android:name=".RoutingProtocolsActivity"
-            android:label="@string/routing_protocols_topic"/>
+            android:label="@string/routing_protocols_topic" />
         <activity
             android:name=".arqsActivity"
-            android:label="@string/arqs_topic"
-            />
+            android:label="@string/arqs_topic" />
         <activity
             android:name=".ModelLayerActivity"
-            android:label="@string/model_layer_topic"/>
-        <activity
-            android:name=".MainTopic" />
+            android:label="@string/model_layer_topic" />
+        <activity android:name=".MainTopic" />
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_Sign_up" />
@@ -44,6 +48,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
