@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.wireless.stickie.Adapter.DragDropRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_shuffle_o_s_i.*
 
 

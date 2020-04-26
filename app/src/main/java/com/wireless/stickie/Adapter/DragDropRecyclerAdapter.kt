@@ -1,10 +1,13 @@
-package com.wireless.stickie
+package com.wireless.stickie.Adapter
 
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.wireless.stickie.ItemMoveCallbackListener
+import com.wireless.stickie.OnStartDragListener
+import com.wireless.stickie.R
 import kotlinx.android.synthetic.main.layout_recyclerview_item.view.*
 import java.util.*
 
@@ -34,7 +37,9 @@ class DragDropRecyclerAdapter(private val startDragListener: OnStartDragListener
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_recyclerview_item, parent, false)
-        return ItemViewHolder(itemView)
+        return ItemViewHolder(
+            itemView
+        )
     }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

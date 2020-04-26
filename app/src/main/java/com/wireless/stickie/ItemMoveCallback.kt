@@ -2,6 +2,8 @@ package com.wireless.stickie
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.wireless.stickie.Adapter.DragDropRecyclerAdapter
+
 class ItemMoveCallbackListener(val adapter: DragDropRecyclerAdapter) : ItemTouchHelper.Callback() {
     override fun getMovementFlags(
         recyclerView: RecyclerView,
