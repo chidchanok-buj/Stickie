@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ModelLayerActivity">
+    tools:context=".CongestionControlActivity">
 
     <TextView
         android:id="@+id/topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="@string/model_layer_topic"
+        android:text="@string/congestion_control_topic"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -21,43 +21,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/arqs_learning"
+        android:id="@+id/learning"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/learning"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/arqs_exercise"
+        app:layout_constraintBottom_toTopOf="@+id/exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/arqs_exercise"
+        android:id="@+id/exercise"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/exercise"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/arqs_quiz"
+        app:layout_constraintBottom_toTopOf="@+id/quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/arqs_quiz"
+        android:id="@+id/quiz"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
         android:text="@string/quiz"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/arqs_score"
+        app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/arqs_score"
+        android:id="@+id/score"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="156dp"

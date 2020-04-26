@@ -3,21 +3,21 @@ package com.wireless.stickie
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_model_layer.*
+import kotlinx.android.synthetic.main.layout_topic.*
 
 class ModelLayerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_model_layer)
+        setContentView(R.layout.layout_topic)
 
 //        model_layer_learning.setOnClickListener {
 //            val intent = Intent(this, ::class.java)
 //            startActivity(intent)
 //        }
 
-        arqs_exercise.setOnClickListener {
+        exercise.setOnClickListener {
             val intent = Intent(this, ShuffleLayer::class.java)
             startActivity(intent)
         }

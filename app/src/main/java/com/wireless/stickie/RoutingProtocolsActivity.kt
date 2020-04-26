@@ -3,19 +3,19 @@ package com.wireless.stickie
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_arqs.*
+import kotlinx.android.synthetic.main.layout_topic.*
 
 class RoutingProtocolsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_arqs)
+        setContentView(R.layout.layout_topic)
         topic.text = getString(R.string.routing_protocols_topic)
-        arqs_learning.setOnClickListener{
+        learning.setOnClickListener{
             val intent = Intent(this, routing_learning::class.java)
             startActivity(intent)
         }
-        arqs_quiz.setOnClickListener{
+        quiz.setOnClickListener{
             val intent = Intent(this, CategoryQuiz::class.java)
             startActivity(intent)
         }
