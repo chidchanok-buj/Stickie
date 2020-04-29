@@ -12,7 +12,7 @@ class RoutingProtocolsActivity : AppCompatActivity() {
         setContentView(R.layout.layout_topic)
         topic.text = getString(R.string.routing_protocols_topic)
         learning.setOnClickListener{
-            val intent = Intent(this, routing_learning::class.java)
+            val intent = Intent(this, ScoreActivity::class.java)
             startActivity(intent)
         }
         quiz.setOnClickListener{
