@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -16,11 +17,14 @@ import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.wireless.stickie.Adapter.ResultGridAdapter
 import com.wireless.stickie.Common.Common
 import com.wireless.stickie.Common.SpacesItemDecoration
+import com.wireless.stickie.DBHelper.ScoreDBHelper
 import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.activity_result.*
 import java.util.concurrent.TimeUnit
 
 class ResultActivity : AppCompatActivity() {
+
+    private var scoreDBHelper: ScoreDBHelper? = null
 
     override fun onDestroy() {
         LocalBroadcastManager.getInstance(this@ResultActivity)
@@ -71,6 +75,10 @@ class ResultActivity : AppCompatActivity() {
         } else {
             txt_result.text = "Try Again :)"
         }
+        scoreDBHelper = ScoreDBHelper(this)
+        scoreDBHelper!!.open()
+        scoreDBHelper!!.insertScore(percent)
+
 
         // Event Button
         btn_filter_total.setOnClickListener {

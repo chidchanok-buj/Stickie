@@ -75,4 +75,6 @@ class DBHelper(context: Context) : SQLiteAssetHelper(context, DB_NAME, null, DB_
 
         return  questionList
     }
+
+
 }
