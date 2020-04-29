@@ -39,7 +39,7 @@ class ScoreActivity : AppCompatActivity() {
         postReference = firebaseDatabase.getReference("Scores")
 
         clear.setOnClickListener {
-            scores!!.clear()
+            clearScore()
             aa!!.notifyDataSetChanged()
         }
 
@@ -57,10 +57,10 @@ class ScoreActivity : AppCompatActivity() {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Get Post object and use the values to update the UI
-                if (dataSnapshot!!.exists()) {
+                if (dataSnapshot.exists()) {
                     for (sco in dataSnapshot.children) {
                         val score = sco.getValue(Score::class.java)!!
-                        scores!!.add(0, score!!.percentage)
+                        scores!!.add(0, score.percentage)
                     }
                     aa!!.notifyDataSetChanged()
                 }

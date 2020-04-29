@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -126,16 +127,17 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun saveScore() {
-            val ref = FirebaseDatabase.getInstance().getReference("Scores")
-            val id = ref.push().key
-            val score = Score(
-                Common.selecedCategory!!.name!!,
-                percentage
-            )
+        val ref = FirebaseDatabase.getInstance().getReference("Scores")
+        val id = ref.push().key
+        val score = Score(
+            Common.selecedCategory!!.name!!,
+            percentage
+        )
 
-            ref.child(id.toString()).setValue(score).addOnCanceledListener {
-                toast("Score Saved")
-            }
+
+        ref.child(id.toString()).setValue(score).addOnCanceledListener {
+            Log.d("ResultActivity", "Score Saved")
+        }
     }
 
     internal var backToQuestion: BroadcastReceiver = object : BroadcastReceiver() {

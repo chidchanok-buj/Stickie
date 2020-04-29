@@ -11,7 +11,7 @@ class RoutingProtocolsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_topic)
         topic.text = getString(R.string.routing_protocols_topic)
-        learning.setOnClickListener{
+        score.setOnClickListener{
             val intent = Intent(this, ScoreActivity::class.java)
             startActivity(intent)
         }
