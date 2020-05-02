@@ -36,21 +36,18 @@
     <string name="quiz">แบบทดสอบ</string>
     <string name="score">คะแนน</string>
     <string name="scorePercent">คะแนน (เปอร์เซ็นต์)</string>
-    <string name="application">Application Layer</string>
-    <string name="transport">Transport Layer</string>
-    <string name="network">Network Layer</string>
-    <string name="data">Data Link Layer</string>
-    <string name="physical">Physical Layer</string>
-    <string name="whatIsARQs">ARQs หรือ Automatic Repeat reQuest คือ การแก้ไขแบบส่งข้อมูลซ้ำ โดยการขอส่งข้อมูลซ้ำโดยอัตโนมัติ</string>
+    <string name="whatIsARQs">การแก้ไขแบบส่งข้อมูลซ้ำ (Error Detection With Retransmission) กำหนดให้ ผู้ส่งจัดการส่งข้อมูลที่เกิดผิดเพี้ยนมาใหม่ วิธีการที่นิยมกันโดยทั่วไปเรียกว่า การขอส่งข้อมูลซ้ำโดยอัตโนมัติ (Automatic Repeat Request; ARQ) ซึ่งมีอยู่สามแบบคือ แบบหยุดคอย แบบส่งย้อนกลับ และแบบต่อเนื่อง
+กระบวนการขอร้องให้ส่งข้อมูลกับมาอีกครั้ง เรียกว่า Automatic Repeat Request or ARQ\n\nARQ แบ่งออกเป็น 3 แบบย่อย
+\n1. Stop and wait ARQ\n2. Go-back-N ARQ\n3. Continuous ARQ</string>
     <string name="slidingWindow">Sliding Window</string>
     <string name="next">ถัดไป</string>
     <string name="back">กลับ</string>
     <string name="tab">\u0009</string>
     <string name="flowControl">Flow Control</string>
-    <string name="flowControlDes">การควบคุมการไหลของข้อมูล (Flow Control) เป็ยวิธีในการที่จะควบคุมการส่งข้อมูลจากผู้ส่งไปยังผู้รับ เพื่อไม่ให้ข้อมูลถูกส่งออกไปมากเกินกว่าที่ผู้รับข้อมูลจะสามารถรับได้ ระหว่างการสื่อสารบนเครือข่าย</string>
-    <string name="slidingWindowConcept">“Sliding Window” เป็นคอนเซ็ป ในการควบคุมการไหลของข้อมูล (Flow Control)</string>
-    <string name="routingDes">routing protocol เป็น  protocol ที่ใช้ในการแลกเปลี่ยนข้อมูล routing ระหว่างสองอุปกรณ์ Router จะทำหน้าที่ในการกำกับจราจรบนอินเทอร์เน็ต ซึ่ง ข้อมูลจะถูกส่งผ่านเครื่องขายในรูปแบบของอินเตอร์เน็ต </string>
-    <string name="routingDes2">router ต่อ router จนกระทั่งถึงคอมพิวเตอร์ปลายทาง และ Routing algorithm จะถูกใช้เพื่อเลือกทางที่ถูกต้องในการส่งข้อมูล \n</string>
+    <string name="flowControlDes">การควบคุมการไหลของข้อมูล (Flow Control) เป็ยวิธีในการที่จะควบคุมการส่งข้อมูลจากผู้ส่งไปยังผู้รับ เพื่อไม่ให้ข้อมูลถูกส่งออกไปมากเกินกว่าที่ผู้รับข้อมูลจะสามารถรับได้ ระหว่างการสื่อสารบนเครือข่าย “Sliding Window” เป็นคอนเซ็ป ในการควบคุมการไหลของข้อมูล (Flow Control) </string>
+    <!--    <string name="slidingWindowConcept">“Sliding Window” เป็นคอนเซ็ป ในการควบคุมการไหลของข้อมูล (Flow Control)</string>-->
+    <string name="routingDes">routing protocol เป็น  protocol ที่ใช้ในการแลกเปลี่ยนข้อมูล routing ระหว่างสองอุปกรณ์ Router จะทำหน้าที่ในการกำกับจราจรบนอินเทอร์เน็ต ซึ่ง ข้อมูลจะถูกส่งผ่านเครื่องขายในรูปแบบของอินเตอร์เน็ต
+router ต่อ router จนกระทั่งถึงคอมพิวเตอร์ปลายทาง และ Routing algorithm จะถูกใช้เพื่อเลือกทางที่ถูกต้องในการส่งข้อมูล \n</string>
     <string name="ripTopic">Routing Information Protocol\nRIP</string>
     <string name="ripDes">DV algorithm จะใช้ระยะทางของแจ่ละ node เป็นตัววัด (hop)  ซึ่งจะเป็นการประเมินระยะทางของตัวเองไปยังเพื่อนบ้าน
 \n -  ถ้าหากว่าค่าเป็น ค่าที่ไม่สิ้นสุด (infinity) hop จะเท่ากับ 16; จะจำกัดขนาดของเครือข่าย
@@ -59,6 +56,7 @@
 \n -  โดยมีตัวเร่งในการอัพเดตสำหรับการเชื่อต่อที่ล้มเหลว
 \n -  เวลาที่จำกัดคือ 180 วินาที จึงจะบอกว่าการค้นพบล้มเหลว
 </string>
+    <string name="clear">ลบคะแนนทั้งหมด</string>
     <string name="title_activity_question">หน้าคำถาม</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -70,12 +68,84 @@
     <string name="menu_home">หน้าหลัก</string>
     <string name="menu_gallery">คลังรภาพ</string>
     <string name="menu_slideshow">การแสดง</string>
-
     <string name="home_second">Home Second</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="stopAndWait">Stop and Wait</string>
+    <string name="stopAndWaitDesc">1.Stop and Wait คือกลไกที่ใช้ในการควบคุมอัตราการไหลและควบคุมการผิดพลาดของข้อมูลที่ง่ายและไม่ซับซ้อนมากนัก มีหลักการดังนี้
+\n1) ผู้งข้อมูลจะต้องทำการcopyเฟรมข้อมูลที่จัดส่งไปเอาไว้ก่อน จนกว่าผู้รับจะยืนยันว่าได้รับเฟรมข้อมูลนั้นแล้ว
+\n2) ในการยืนยันตอบรับเฟรมข้อมูลของผู้รับนั้น จะรับจะต้องส่งเฟรม acknowledgment(ACK) มาให้กับผุ้ส่งซึ่งการส่งเฟรม ACK เป็นการบ่งบอกว่าได้รับเฟรมอะไร และเฟรมที่จะต้องการถัดไปนั้นคือเฟรมอะไร
+\n3) ถ้าผู้รับได้รับเฟรมข้อมุลที่ผิดพลาด ผู้รับจะทิ้งเฟรมนั้นไป เชื่ออยากได้ เฟรม 1 แต่ได้ เฟรม 0 มา จะทำการทิ้งเฟรมนั้นไป</string>
+    <string name="goBack">Go Back N</string>
+    <string name="goBackDesc">Go Back N จะทำการส่งข้อมูลจำนวน W เฟรมก่อนที่จะได้รับเฟรม ACK ดังนั้นผู้ส่งจะต้องทำการcopyเฟรมข้อมูลทั้ง W เฟรมเอาไว้ด้วย เมื่อเป็นเช่นนี้ในเฮดเดอร์ของเฟรมข้อมูลทุกเฟรมจะต้องมีหมายเลขลำดับ (Sequence number) ด้วยเพื่อที่จะได้รับทราบว่าเป็นเฟรมที่เท่าใด โดยที่หมายเลขลำดับนี้จะเริ่มต้นจาก 0 เป็นต้นไป และจะเริ่มจากซ้ายไปขวา</string>
+    <string name="selective">Selective Repeat</string>
+    <string name="selectiveDesc">เลือกซ้ำยังเป็นโปรโตคอลหน้าต่างบานเลื่อนที่ตรวจจับหรือแก้ไขข้อผิดพลาดที่เกิดขึ้นในชั้นข้อมูล โพรโทคอลการทำซ้ำที่เลือกส่งสัญญาณเฉพาะเฟรมที่เสียหายหรือสูญหาย ในโปรโตคอลการทำซ้ำแบบเลือกเฟรมรับการส่งสัญญาณใหม่จะได้รับตามลำดับ โปรโตคอลการเลือกซ้ำสามารถดำเนินการต่อไปนี้</string>
+
+    <string name="bgp">Border Gateway Protocol (BGP)</string>
+    <string name="bgpDesc">BGP (Border Gateway Protocol) เป็นโปรโตคอลเลือกเส้นทางประเภท Exterior Gateway Routing ที่ใช้เพื่อการเชื่อมต่อ Router และเครือข่ายที่อยู่ต่าง Domain กันบน Internet ที่ใช้สำหรับการหาเส้นทางภายในระบบออโตโนมัส
+โดยใช้หลักการหาเส้นทางแบบ
+Path Vector ในตารางหาเส้นทางจะประกอบด้วย เครือข่ายปลายทาง, Router ตัวต่อไปที่จะส่ง Packet ไปให้ และเส้นทางไปยังปลายทาง
+        \n\tEBGP กับ IBGP
+ </string>
+    <string name="pimdm">PIM-DM</string>
+    <string name="pimdmDesc">โหมดบีบอัด (โหมดหนาแน่น)
+โปรโตคอลมัลติคาสต์ - หนาแน่นแบบอิสระ  (PIM-DM) ใช้สำหรับกลุ่มที่มีขนาดกะทัดรัดโดยปกติจะมีผู้รับจำนวนมาก เขาสร้างต้นไม้เส้นทางที่สั้นที่สุดโดยอ้อมสร้างเครือข่ายทั้งหมดด้วยการทำมัลติคาสต์และตัดกิ่งไม้ของต้นไม้ระหว่างทางกลับในที่ที่ไม่มีผู้รับ PIM-DM นี้ใช้เมธอด RPF (พรุน) ที่ถูกตัดทอน ดาต้าแกรมรุ่นทดลองจะถูกส่งทุก 3 นาทีซึ่งเป็นหนึ่งในข้อเสียของโปรโตคอลนี้
+        \nบ่อยครั้งที่โปรโตคอล PIM-DM ใช้ร่วมกับโปรโตคอล DVMRP (Distance Vector Multicast Routing Protocol)
+</string>
+    
+    <string name="task">จัดเรียง Layer ต่อไปนี้ให้อยู่ในลำดับที่ถูกต้อง</string>
+
+    <string name="application">Application Layer</string>
+    <string name="applicationDesc">มีโพรโตคอลสำหรับสร้างจอเทอร์มินัลเสมือน เรียกว่า TELNET โพรโตคอลสำหรับการจัดการแฟ้มข้อมูล เรียกว่า FTP และโพรโตคอลสำหรับการให้บริการจดหมายอิเล็กทรอนิกส์ เรียกว่า SMTP โดยโพรโตคอลสำหรับสร้างจอเทอร์มินัลเสมือนช่วยให้ผู้ใช้สามารถติดต่อกับเครื่องโฮสต์ที่อยู่ไกลออกไปโดยผ่านอินเทอร์เน็ต และสามารถทำงานได้เสมือนกับว่ากำลังนั่งทำงานอยู่ที่เครื่องโฮสต์นั้น
+</string>
+    <string name="transport">Transport Layer</string>
+    <string name="transportDesc">แบ่งเป็นโพรโตคอล 2 ชนิดตามลักษณะ ลักษณะแรกเรียกว่า Transmission Control Protocol (TCP) เป็นแบบที่มีการกำหนดช่วงการสื่อสารตลอดระยะเวลาการสื่อสาร (connection-oriented) ซึ่งจะยอมให้มีการส่งข้อมูลเป็นแบบ Byte stream ที่ไว้ใจได้โดยไม่มีข้อผิดพลาด ข้อมูลที่มีปริมาณมากจะถูกแบ่งออกเป็นส่วนเล็กๆ เรียกว่า message ซึ่งจะถูกส่งไปยังผู้รับผ่านทางชั้นสื่อสารของอินเทอร์เน็ต ทางฝ่ายผู้รับจะนำ message มาเรียงต่อกันตามลำดับเป็นข้อมูลตัวเดิม TCP ยังมีความสามารถในการควบคุมการไหลของข้อมูลเพื่อป้องกันไม่ให้ผู้ส่ง ส่งข้อมูลเร็วเกินกว่าที่ผู้รับจะทำงานได้ทันอีกด้วย
+</string>
+    <string name="network">Network Layer</string>
+    <string name="networkDesc">ใช้ประเภทของระบบการสื่อสารที่เรียกว่า ระบบเครือข่ายแบบสลับช่องสื่อสารระดับแพ็กเก็ต (packet-switching network) ซึ่งเป็นการติดต่อแบบไม่ต่อเนื่อง (Connectionless) หลักการทำงานคือการปล่อยให้ข้อมูลขนาดเล็กที่เรียกว่า แพ็กเก็ต (Packet) สามารถไหลจากโหนดผู้ส่งไปตามโหนดต่างๆ ในระบบจนถึงจุดหมายปลายทางได้โดยอิสระ หากว่ามีการส่งแพ็กเก็ตออกมาเป็นชุดโดยมีจุดหมายปลายทางเดียวกันในระหว่างการเดินทางในเครือข่าย แพ็กเก็ตแต่ละตัวในชุดนี้ก็จะเป็นอิสระแก่กันและกัน ดังนั้น แพ็กเก็ตที่ส่งไปถึงปลายทางอาจจะไม่เป็นไปตามลำดับก็ได้
+</string>
+    <string name="data">Data Link Layer</string>
+    <string name="dataDesc">ทำหน้าที่ควบคุมสาบยข้อมูลระหว่างระบบกับปลายทางอีกเานหนึ่งโดยการรวมตัวอักระเข้าด้วยกันเป็นข่าวสารแล้วจึงตรวจสอบ ก่อนที่จะส่งลงไปในสายสัญญาณ
+        \nData Link Layer ทำหน้าที่คล้ายผู้ควบคุมจัดเรียงและสับเปลี่ยนตู้รถไฟของขบวนรถก่อนออกจากสถานีและที่สถาณีปลายทาง
+    </string>
+    <string name="physical">Physical Layer</string>
+    <string name="physicalDesc">ชั้นกายภาพ ในชั้นนี้จะกล่าวถึง อุปกรณ์ที่ใช้ในการเชื่อมต่อ เช่น สายเคเบิล Lan สายไฟฟ้า หรือ Connectorต่างๆ ข้อต่อหรือปลั๊กที่ใช้มีมาตรฐานอย่างไร ใช้ไฟกี่โวลต์ มีการชำรุดของอุปกรณ์ หรือไม่ เช่นสายขาด ปลั๊กหลุด หรือตัวอุปกรณ์ใช้งานไม่ได้ เป็นต้น โดยในชั้นระบบนี้จะใช้หน่วยของ layerเป็น bits ดังนั้น protocol ในชั้นนี้คือ CAT5, CAT6, RJ-45 cable เป็นต้น
+    </string>
+
+    <string name="congestion"></string>
+    <string name="congestionDesc">เพื่อให้กำรส่งข้อมูลโดยโพรโตคอล TCP ไม่มำกเกินไปจนท ำให้เครือข่ำยเกิดปัญหำ และไม่น้อยเกินไปจนท ำให้
+ประสิทธิภำพกำรส่งข้อมูลเป็นปัญหำกับ Application จึงมีกำรก ำหนดกระบวนกำรควบคุมควำมคับคั่งในเครือข่ำย
+(Congestion Control) ของโพรโตคอล TCP โดยหลักกำรของ Congestion Control คือกำรก ำหนดจ ำนวน Segment ที่
+TCP จะส่งได้พร้อมๆ กัน</string>
+    <string name="tahoe">Tahoe</string>
+    <string name="tahoeDesc">มีกำรทำงานเฉพาะ Slow Start, Congestion Avoidance และ Fast Retransmit
+\n\n1. ทำ Slow Start เพิ่มค่ำ CWND จนถึงจุด Timeout หรือ Fast Retransmit
+\n\n2. ที่จุด Timeout ทำกำรตั้งค่ำ ssthresh = CWND / 2
+\n\n3. ทำ Slow Start อีกครั้งจนค่ำ CWND เพิ่มขึ้นถึง sstresh แล้วเข้ำสู่ขั้นตอน Congestion Avoidance
+\n\n4. ในขั้นตอน Congestion Avoidance จะเพิ่มค่ำจนถึงจุด Timeout หรือ Fast Retransmit อีกครั้งจึงทำ
+กำรตั้งค่ำ ssthresh ใหม่ แล้วกลับสู่ขั้นตอนที่ 3
+</string>
+    <string name="reno">Reno</string>
+    <string name="renoDesc">มีกำรทำงานเฉพาะ Slow Start, Congestion Avoidance และ Fast Retransmit
+\n\n1. ทำ Slow Start เพิ่มค่ำ CWND จนถึงจุด Timeout หรือ Fast Retransmit
+\n\n2. ที่จุด Timeout ทำกำรตั้งค่ำ ssthresh = CWND / 2
+\n\n3. ทำ Slow Start อีกครั้ง จนค่ำ CWND เพิ่มขึ้นถึง ssthresh แล้วเข้ำสู่ขั้นตอน Congestion Avoidance
+\n\n4. ในขั้นตอน Congestion Avoidance
+        \n\n\ta. จะเพิ่มค่ำจนถึงจุด Fast Retransmit จึงท ำกำรตั้งค่ำ ssthresh ใหม่, ตั้งค่ำ CWND =
+ssthresh แล้วกลับสู่ขั้นตอนที่ 4
+        \n\n\tb. จะเพิ่มค่ำจนถึงจุด Timeout จึงท ำกำรตั้งค่ำ ssthresh ใหม่แล้วไปท ำงำนขั้นตอนที่ 3
+</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="clear">ลบคะแนนทั้งหมด</string>
+    <string name="tahoeOrReno">Tahoe or Reno ?</string>
+    <string name="congestion2">Packet loss are occured by timeout/ duplicate ACKs or both ?</string>
+    <string name="solution">คำตอบ</string>
+    <string name="congestionSolution">Tahoe\nBoth</string>
 
-
+    <string name="arqQuestion1">สมมุตว่าผู้ส่ง ส่งเ 1 2 3 4 5 ไป แต่ว่าส่วนที่ 3 หายไป
+        \nเลขอใดบ้างที่จะถูกส่งใหม่หากใช้ Go-Back-N ARQ
+    </string>
+    <string name="arqQuestion2">สมมุตว่าผส่งเลข 4 5 6 7 8 ไป แต่ว่าเลช 5 หายไป
+        \nเลขอใดบ้างที่จะถูกส่งใหม่หากใช้ Selective Repeat ARQ
+    </string>
+    <string name="arqQuestion3">Three-way Handshake ประกอบไปด้วยอะไรบ้าง</string>
 </resources>

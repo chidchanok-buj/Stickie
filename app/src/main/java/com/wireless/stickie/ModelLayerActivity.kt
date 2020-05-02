@@ -12,30 +12,28 @@ class ModelLayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_topic)
 
-//        model_layer_learning.setOnClickListener {
-//            val intent = Intent(this, ::class.java)
-//            startActivity(intent)
-//        }
+        topic.text = getString(R.string.model_layer_topic)
+
+        learning.setOnClickListener {
+            val intent = Intent(this, ModelLearning::class.java)
+            startActivity(intent)
+        }
 
         exercise.setOnClickListener {
-            val intent = Intent(this, ShuffleLayer::class.java)
+            val intent = Intent(this, ModelExercise::class.java)
+            startActivity(intent)
+        }
+
+        quiz.setOnClickListener{
+            val intent = Intent(this, CategoryQuiz::class.java)
+            startActivity(intent)
+        }
+
+        score.setOnClickListener{
+            val intent = Intent(this, ScoreActivity::class.java)
             startActivity(intent)
         }
 
     }
-
-//    fun addLayer(model: String) {
-//        layerItems?.add("Application Layer")
-//
-//        if (model == "OSI") {
-//            layerItems?.add("Presentation Layer")
-//            layerItems?.add("Session Layer")
-//        }
-//
-//        layerItems?.add("Transport Layer")
-//        layerItems?.add("Network Layer")
-//        layerItems?.add("Data Link Layer")
-//        layerItems?.add("Physical Layer")
-//    }
 
 }

@@ -35,22 +35,17 @@
     <string name="quiz">Quiz</string>
     <string name="score">Score</string>
     <string name="scorePercent">Score (Percent)</string>
-    <string name="application">Application Layer</string>
-    <string name="transport">Transport Layer</string>
-    <string name="network">Network Layer</string>
-    <string name="data">Data Link Layer</string>
-    <string name="physical">Physical Layer</string>
     <string name="whatIsARQs">ARQs or Automatic Repeat reQuest is an error-control method for data transmission that uses acknowledgements (messages sent by the receiver indicating that it has correctly received a packet) and timeouts (specified periods of time allowed to elapse before an acknowledgment is to be received) to achieve reliable data transmission over an unreliable service.</string>
     <string name="slidingWindow">Sliding Window</string>
     <string name="next">Next</string>
     <string name="tab">\u0009</string>
     <string name="flowControl">Flow Control</string>
     <string name="flowControlDes">Typically, it requires the consumer to update its ability to the producer periodically.
-        \n\n“Feedback” system: Tell the sender how much more data can the receiver consume</string>
-    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control </string>
+        \n“Feedback” system: Tell the sender how much more data can the receiver consume \n“Sliding Window” Concept is used for flow control </string>
+    <!--    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control </string>-->
     <string name="back">Back</string>
-    <string name="routingDes">A routing protocol specifies how routers communicate with each other to distribute information that enables them to select routes between any two nodes on a computer network. Routers perform the "traffic directing" functions on the Internet; data packets are forwarded through the networks of the internet from</string>
-    <string name="routingDes2">router to router until they reach their destination computer.  Routing algorithms determine the specific choice of route. \n</string>
+    <string name="routingDes">A routing protocol specifies how routers communicate with each other to distribute information that enables them to select routes between any two nodes on a computer network. Routers perform the "traffic directing" functions on the Internet; data packets are forwarded through the networks of the internet from
+router to router until they reach their destination computer.  Routing algorithms determine the specific choice of route. \n</string>
     <string name="ripTopic">Routing Information Protocol\nRIP</string>
     <string name="ripDes">DV algorithm with hop count as metric
 \n -  Infinity value is 16 hops; limits network size
@@ -59,6 +54,7 @@
 \n -  With triggered updates for link failures
 \n -  Time-out in 180 seconds to detect failures
 </string>
+    <string name="clear">Clear All Score</string>
     <string name="title_activity_question">QuestionActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -66,15 +62,101 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-
     <string name="home_second">Home Second</string>
+    <string name="lang">Language</string>
+
+    <string name="stopAndWait">Stop and Wait</string>
+    <string name="stopAndWaitDesc">Stop-and-wait ARQ, also referred to as alternating bit protocol, is a method in telecommunications to send information between two connected devices. It ensures that information is not lost due to dropped packets and that packets are received in the correct order. It is the simplest automatic repeat-request mechanism.</string>
+    <string name="goBack">Go Back N</string>
+    <string name="goBackDesc"> Go-Back-N ARQ is a specific instance of the automatic repeat request (ARQ) protocol, in which the sending process continues to send a number of frames specified by a window size even without receiving an acknowledgement (ACK) packet from the receiver.</string>
+    <string name="selective">Selective Repeat</string>
+    <string name="selectiveDesc">Receiver individually acknowledges all correctly
+received packets
+\n• buffers packets, as needed, for eventual in-order
+delivery to upper layer
+\n• Sender only resends packets for which ACK not
+received
+\n• sender timer for each unACKed packet</string>
+
+    <string name="bgp">Border Gateway Protocol (BGP)</string>
+    <string name="bgpDesc">Only exterior routing protocol that bases on path-vector
+routing
+\n• eBGP (external BGP)
+\nUsed to learn and advertise network reachability information
+between ASs via gateway routers
+\n• iBGP (internal BGP)
+\nA node learns multiple routes to a destination
+\nIncremental updates
+</string>
+
+    <string name="pimdm">PIM-DM</string>
+    <string name="pimdmDesc">• PIM-DM operates similarly to DVMRP but without RPB.
+\n\n• Using only RPF and RPM, PIM-DM broadcasts packets
+until the tree is pruned.
+\n\n• Steps: after receiving the first multicast packet from S)
+</string>
+
+    <string name="task">Rearrange the following layer</string>
+
+    <string name="application">Application Layer</string>
+    <string name="applicationDesc">Interact with users, Human-Computer Interface
+\nThe topmost layer in the TCP/IP model.
+\nAllows the user to interact with the application
+\nResponsible for handling high-level protocols.
+\n\nMain protocols: HTTP, SNMP, SMTP, DNS, TELNET, FTP
+</string>
+    <string name="transport">Transport Layer</string>
+    <string name="transportDesc">End-to-end verifications, flow control, error control
+        \nResponsible for the reliability, flow control, and correction of data
+        \n\nThere are 2 protocols which are User datagram protocol(UDP) and Transmission control protocol(TCP).
+        \n- UDP provides connectionless service and end-to-end delivery of transmission
+        \n- TCP provides a full transport layer services to applications
+</string>
+    <string name="network">Network Layer</string>
+    <string name="networkDesc">Determine how the bits are routed
+        \nResponsible for creating the packets that move across the network.
+        \n\nProtocol: IPv4/IPv6, RIP, IGMP
+        \n No Error or Flow or Congestion Control
+        \n No Quality of Service
+        \n No Security Provision
+</string>
+    <string name="data">Data Link Layer</string>
+    <string name="dataDesc">The data link layer is the protocol layer in a program that handles the moving of data into and out of a physical link in a network. The data link layer is Layer 2 in the Open Systems Interconnection (OSI) architecture model for a set of telecommunication protocols.
+    \n\nEnsure bits are transferred correctly and resend when appropriate.
+        \n\nProtocol: Ethernet, IEEE 802.11x, Token ring
+    </string>
+    <string name="physical">Physical Layer</string>
+    <string name="physicalDesc">In the seven-layer OSI model of computer networking, the physical layer or layer 1 is the first and lowest layer.\nThis layer may be implemented by a PHY chip. The physical layer consists of the electronic circuit transmission technologies of a network.
+    \nTransferring bits from one machine to the other
+        \n\nProtocol: Optical, Bluetooth, Wireless, DSL, etc.
+    </string>
+    <string name="congestion">Congestion</string>
+    <string name="congestionDesc"> TCP, the congestion window is one of the factors that determines the number of bytes that can be sent out at any time.
+        \n\nThe congestion window is maintained by the sender and is a means of stopping a link between the sender and the receiver from becoming overloaded with too much traffic.
+        \n\nThis should not to be confused with the sliding window maintained by the receiver which exists to prevent the receiver from becoming overloaded. The congestion window is calculated by estimating how much congestion there is on the link.</string>
+    <string name="tahoe">Tahoe</string>
+    <string name="tahoeDesc">When a loss occurs, fast retransmit is sent, half of the current CWND is saved as ssthresh and slow start begins again from its initial CWND. Once the CWND reaches ssthresh, TCP changes to congestion avoidance algorithm where each new ACK increases the CWND by MSS / CWND. This results in a linear increase of the CWND.</string>
+    <string name="reno">Reno</string>
+    <string name="renoDesc">A fast retransmit is sent, half of the current CWND is saved as ssthresh and as new CWND, thus skipping slow start and going directly to the congestion avoidance algorithm. The overall algorithm here is called fast recovery.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="lang">Language</string>
-    <string name="clear">Clear All Score</string>
+    <string name="tahoeOrReno">Tahoe or Reno ?</string>
+    <string name="congestion2">Packet loss are occurred by
+        \ntimeout, duplicate ACKs, or both ?</string>
+    <string name="solution">Solution</string>
+    <string name="congestionSolution">Tahoe\nBoth</string>
+
+    <string name="arqQuestion1">1. If sender sends segments number 1 2 3 4 5
+        but then the segment number 3 lost.
+        \n\nWhat are the segments numbers that will be retransmitted by using Go-Back-N ARQ
+    </string>
+    <string name="arqQuestion2">2. If sender sends segments number 4 5 6 7 8
+        but then the segment number 5 lost.
+        \n\nWhat are the segments numbers that will be retransmitted by using Selective Repeat ARQ
+    </string>
+    <string name="arqQuestion3">3. Three-way Handshake consists of .....</string>
 </resources>

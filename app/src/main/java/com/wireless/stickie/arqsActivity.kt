@@ -14,7 +14,22 @@ class arqsActivity : AppCompatActivity() {
         topic.text = getString(R.string.arqs_topic)
 
         learning.setOnClickListener{
-            val intent = Intent(this, arqs_learning_slidingwindow::class.java)
+            val intent = Intent(this, ARQLearning::class.java)
+            startActivity(intent)
+        }
+
+        exercise.setOnClickListener {
+            val intent = Intent(this, ARQExercise::class.java)
+            startActivity(intent)
+        }
+
+        quiz.setOnClickListener{
+            val intent = Intent(this, CategoryQuiz::class.java)
+            startActivity(intent)
+        }
+
+        score.setOnClickListener{
+            val intent = Intent(this, ScoreActivity::class.java)
             startActivity(intent)
         }
     }

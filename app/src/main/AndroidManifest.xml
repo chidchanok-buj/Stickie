@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScoreActivity"></activity>
+        <activity android:name=".ARQExercise"></activity>
+        <activity android:name=".RoutingExercise" />
+        <activity android:name=".CongestionExercise" />
+        <activity
+            android:name=".RoutingLearning"
+            android:theme="@style/AppTheme.NoActionBarCard" />
+        <activity android:name=".ScoreActivity" />
         <activity android:name=".ResultActivity" />
         <activity
             android:name=".QuestionActivity"
@@ -19,15 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CategoryQuiz" />
         <activity
-            android:name=".arqs_learning_slidingwindow_2"
-            android:label="@string/learning" />
-        <activity
-            android:name=".arqs_learning_slidingwindow"
-            android:label="@string/learning" />
-        <activity
-            android:name=".ShuffleLayer"
+            android:name=".ModelExercise"
             android:label="@string/exercise" />
-        <activity android:name=".tcpLayersLearning" />
         <activity
             android:name=".CongestionControlActivity"
             android:label="@string/congestion_control_topic" />
@@ -47,6 +46,9 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
+        <activity android:name=".ARQLearning" />
+        <activity android:name=".ModelLearning" />
+        <activity android:name=".CongestionLearning" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,8 +56,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".routing_learning" />
-        <activity android:name=".routing_rip" />
     </application>
 
 </manifest>
