@@ -8,7 +8,6 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.TextUtils
-import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -349,13 +348,13 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     private fun genQuestion() {
         Common.questionList =
-            DBHelper.getInstance(this).getQuestionByCategory(Common.selecedCategory!!.id)
+            DBHelper.getInstance(this).getQuestionByCategory(Common.selectedCategory!!.id)
 
         if (Common.questionList.size == 0) {
             MaterialStyledDialog.Builder(this)
                 .setTitle("Oops!")
                 .setIcon(R.drawable.ic_sentiment_very_dissatisfied_black_24dp)
-                .setDescription("We don't have any question in this ${Common.selecedCategory!!.name} category")
+                .setDescription("We don't have any question in this ${Common.selectedCategory!!.name} category")
                 .setPositiveText("OK")
                 .onPositive { dialog, which ->
                     dialog.dismiss()

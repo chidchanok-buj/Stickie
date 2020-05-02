@@ -14,7 +14,7 @@
     <string name="invalid_username">ไม่สามารถใช้ชื่อนี้ได้</string>
     <string name="invalid_password">รหัสต้องมีขั้นต่ำ 6 อักขระ</string>
     <string name="login_failed">"ไม่สามารถเข้าสู่ระบบได้"</string>
-    <string name="sign_in_description">To restore your goals, progress, and performance you will need to sign in</string>
+    <string name="sign_in_description">ในการดูเป้าหมายที่สำเร็จ ความคืบหน้า และ ผลการเรียน คุณจะต้องทำการเข้าสู่ระบบ</string>
     <string name="sign_in_header">ยินดีต้อนรับ :)</string>
     <string name="sign_up_header">สร้างบัญชี</string>
     <string name="sign_up_with">สร้างบัญชีด้วย...</string>
@@ -35,31 +35,31 @@
     <string name="exercise">แบบฝึกหัด</string>
     <string name="quiz">แบบทดสอบ</string>
     <string name="score">คะแนน</string>
+    <string name="scorePercent">คะแนน (เปอร์เซ็นต์)</string>
     <string name="application">Application Layer</string>
     <string name="transport">Transport Layer</string>
     <string name="network">Network Layer</string>
     <string name="data">Data Link Layer</string>
     <string name="physical">Physical Layer</string>
-    <string name="whatIsARQs">ARQs or Automatic Repeat reQuest is an error-control method for data transmission that uses acknowledgements (messages sent by the receiver indicating that it has correctly received a packet) and timeouts (specified periods of time allowed to elapse before an acknowledgment is to be received) to achieve reliable data transmission over an unreliable service.</string>
+    <string name="whatIsARQs">ARQs หรือ Automatic Repeat reQuest คือ การแก้ไขแบบส่งข้อมูลซ้ำ โดยการขอส่งข้อมูลซ้ำโดยอัตโนมัติ</string>
     <string name="slidingWindow">Sliding Window</string>
     <string name="next">ถัดไป</string>
     <string name="back">กลับ</string>
     <string name="tab">\u0009</string>
     <string name="flowControl">Flow Control</string>
-    <string name="flowControlDes">Typically, it requires the consumer to update its ability to the producer periodically.
-        \n\n“Feedback” system: Tell the sender how much more data can the receiver consume</string>
-    <string name="slidingWindowConcept">“Sliding Window” Concept is used for flow control </string>
-    <string name="routingDes">A routing protocol specifies how routers communicate with each other to distribute information that enables them to select routes between any two nodes on a computer network. Routers perform the "traffic directing" functions on the Internet; data packets are forwarded through the networks of the internet from</string>
-    <string name="routingDes2">router to router until they reach their destination computer.  Routing algorithms determine the specific choice of route. \n</string>
+    <string name="flowControlDes">การควบคุมการไหลของข้อมูล (Flow Control) เป็ยวิธีในการที่จะควบคุมการส่งข้อมูลจากผู้ส่งไปยังผู้รับ เพื่อไม่ให้ข้อมูลถูกส่งออกไปมากเกินกว่าที่ผู้รับข้อมูลจะสามารถรับได้ ระหว่างการสื่อสารบนเครือข่าย</string>
+    <string name="slidingWindowConcept">“Sliding Window” เป็นคอนเซ็ป ในการควบคุมการไหลของข้อมูล (Flow Control)</string>
+    <string name="routingDes">routing protocol เป็น  protocol ที่ใช้ในการแลกเปลี่ยนข้อมูล routing ระหว่างสองอุปกรณ์ Router จะทำหน้าที่ในการกำกับจราจรบนอินเทอร์เน็ต ซึ่ง ข้อมูลจะถูกส่งผ่านเครื่องขายในรูปแบบของอินเตอร์เน็ต </string>
+    <string name="routingDes2">router ต่อ router จนกระทั่งถึงคอมพิวเตอร์ปลายทาง และ Routing algorithm จะถูกใช้เพื่อเลือกทางที่ถูกต้องในการส่งข้อมูล \n</string>
     <string name="ripTopic">Routing Information Protocol\nRIP</string>
-    <string name="ripDes">DV algorithm with hop count as metric
-\n -  Infinity value is 16 hops; limits network size
-\n -  Includes split horizon with poison reverse
-\n\nRouters send vectors every 30 seconds
-\n -  With triggered updates for link failures
-\n -  Time-out in 180 seconds to detect failures
+    <string name="ripDes">DV algorithm จะใช้ระยะทางของแจ่ละ node เป็นตัววัด (hop)  ซึ่งจะเป็นการประเมินระยะทางของตัวเองไปยังเพื่อนบ้าน
+\n -  ถ้าหากว่าค่าเป็น ค่าที่ไม่สิ้นสุด (infinity) hop จะเท่ากับ 16; จะจำกัดขนาดของเครือข่าย
+\n -  รวมไปถึง split horizon ร่วมด้วย poison reverse
+\n\nRouters จะส่งเวคเตอร์ทุก ๆ 30 วินาที
+\n -  โดยมีตัวเร่งในการอัพเดตสำหรับการเชื่อต่อที่ล้มเหลว
+\n -  เวลาที่จำกัดคือ 180 วินาที จึงจะบอกว่าการค้นพบล้มเหลว
 </string>
-    <string name="title_activity_question">QuestionActivity</string>
+    <string name="title_activity_question">หน้าคำถาม</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -68,13 +68,14 @@
     <string name="action_settings">ตั้งค่า</string>
     <string name="lang">ภาษา</string>
     <string name="menu_home">หน้าหลัก</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_gallery">คลังรภาพ</string>
+    <string name="menu_slideshow">การแสดง</string>
 
     <string name="home_second">Home Second</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="clear">Clear</string>
+    <string name="clear">ลบคะแนนทั้งหมด</string>
+
 
 </resources>

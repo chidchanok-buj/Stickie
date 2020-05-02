@@ -12,7 +12,7 @@ object Common {
     var answerSheetList: MutableList<CurrentQuestion> = ArrayList()
     var answerSheetListFiltered: MutableList<CurrentQuestion> = ArrayList()
     var questionList:MutableList<Question> = ArrayList()
-    var selecedCategory: Category?=null
+    var selectedCategory: Category?=null
 
     var fragmentList:MutableList<QuestionFragment> = ArrayList()
 

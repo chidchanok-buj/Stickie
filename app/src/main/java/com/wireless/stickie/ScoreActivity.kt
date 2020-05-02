@@ -2,8 +2,10 @@ package com.wireless.stickie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_score.*
 import com.wireless.stickie.Model.Score
@@ -12,22 +14,32 @@ import org.jetbrains.anko.toast
 
 class ScoreActivity : AppCompatActivity() {
 
-    private lateinit var postKey: String
+    private var mAuth: FirebaseAuth? = null
     private lateinit var postReference: DatabaseReference
     private lateinit var firebaseDatabase: FirebaseDatabase
     private var postListener: ValueEventListener? = null
     private var listView: ListView? = null
+    private var sub: ListView? = null
     private var scores: ArrayList<Int>? = null
+    private var subjects: ArrayList<String>? = null
     private var aa: ArrayAdapter<Int>? = null
+    private var bb: ArrayAdapter<String>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
-        listView = findViewById(R.id.ListView)
+        mAuth = FirebaseAuth.getInstance()
+        val user = mAuth!!.currentUser
+        listView = findViewById(R.id.score)
+        sub = findViewById(R.id.subject)
         scores = ArrayList()
+        subjects = ArrayList()
         aa = ArrayAdapter(this, android.R.layout.simple_list_item_1, scores!!)
-        listView!!.setAdapter(aa)
+        bb = ArrayAdapter(this, android.R.layout.simple_list_item_1, subjects!!)
+        listView!!.adapter = aa
+        sub!!.adapter = bb
+
 
 //         Get post key from intent
 //        postKey = intent.getStringExtra(EXTRA_POST_KEY)
@@ -36,33 +48,24 @@ class ScoreActivity : AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
 
         // Initialize Database
-        postReference = firebaseDatabase.getReference("Scores")
-
-        clear.setOnClickListener {
-            clearScore()
-            aa!!.notifyDataSetChanged()
-        }
-
-    }
-
-    private fun clearScore() {
-
-    }
-
-    public override fun onStart() {
-        super.onStart()
+        postReference = firebaseDatabase.getReference(user!!.displayName.toString())
 
         // Add value event listener to the post
         // [START post_value_event_listener]
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Get Post object and use the values to update the UI
+                Log.d("ScoreActivity", "If")
                 if (dataSnapshot.exists()) {
                     for (sco in dataSnapshot.children) {
+                        Log.d("ScoreActivity", "For")
                         val score = sco.getValue(Score::class.java)!!
                         scores!!.add(0, score.percentage)
+                        subjects!!.add(0, score.name.toString())
+                        Log.d("ScoreActivity", "Add to Array List")
                     }
                     aa!!.notifyDataSetChanged()
+                    bb!!.notifyDataSetChanged()
                 }
 
             }
@@ -79,11 +82,35 @@ class ScoreActivity : AppCompatActivity() {
         // Keep copy of post listener so we can remove it when app stops
         this.postListener = postListener
 
+        clear.setOnClickListener {
+            clearScore()
+            Log.d("ScoreActivity", "Clear")
+            scores!!.clear()
+            subjects!!.clear()
+        }
+
+    }
+
+    private fun clearScore() {
+        mAuth = FirebaseAuth.getInstance()
+
+        val user = mAuth!!.currentUser
+        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
+        ref.removeValue()
+        aa!!.notifyDataSetChanged()
+        bb!!.notifyDataSetChanged()
+
+
+    }
+
+    public override fun onStart() {
+        super.onStart()
+
+
     }
 
     companion object {
 
-        const val EXTRA_POST_KEY = "post_key"
         private const val TAG = "ScoreActivity"
     }
 }

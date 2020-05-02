@@ -6,16 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.wireless.stickie.Common.Common
 import com.wireless.stickie.Model.Category
 import com.wireless.stickie.Interface.IOnRecyclerViewItemClickListener
-import com.wireless.stickie.Model.Question
 import com.wireless.stickie.QuestionActivity
 import com.wireless.stickie.R
-import kotlinx.android.synthetic.main.layout_category_item.view.*
 
 class CategoryAdapter(
     internal var context: Context,
@@ -36,7 +33,7 @@ class CategoryAdapter(
         holder.txt_category_name.text = categoryList[position].name
         holder.setiOnRecyclerViewItemClickListener(object:IOnRecyclerViewItemClickListener{
             override fun onClick(view: View, position: Int) {
-                Common.selecedCategory = categoryList[position]
+                Common.selectedCategory = categoryList[position]
 
                 val intent = Intent(context, QuestionActivity::class.java)
                 context.startActivity(intent)

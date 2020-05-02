@@ -10,20 +10,26 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.wireless.stickie.Adapter.ResultGridAdapter
 import com.wireless.stickie.Common.Common
 import com.wireless.stickie.Common.SpacesItemDecoration
 import com.wireless.stickie.Model.Score
 import kotlinx.android.synthetic.main.activity_result.*
-import org.jetbrains.anko.toast
 import java.util.concurrent.TimeUnit
 
 class ResultActivity : AppCompatActivity() {
 
+    private var mAuth: FirebaseAuth? = null
+    private lateinit var postReference: DatabaseReference
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private var scores: ArrayList<Int>? = null
+    private var aa: ArrayAdapter<Int>? = null
     var percentage = 0
 
     override fun onDestroy() {
@@ -126,15 +132,22 @@ class ResultActivity : AppCompatActivity() {
         recycler_result.adapter = adapter
     }
 
+    // Save score to Firebase
     private fun saveScore() {
-        val ref = FirebaseDatabase.getInstance().getReference("Scores")
-        val id = ref.push().key
+        mAuth = FirebaseAuth.getInstance()
+
+        val user = mAuth!!.currentUser
+        scores = ArrayList()
+        aa = ArrayAdapter(this, android.R.layout.simple_list_item_1, scores!!)
+        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
+
+//        val id = ref.push().key
+        val id = Common.selectedCategory!!.id
         val score = Score(
-            Common.selecedCategory!!.name!!,
+            Common.selectedCategory!!.name!!,
             percentage
         )
-
-
+        // add data
         ref.child(id.toString()).setValue(score).addOnCanceledListener {
             Log.d("ResultActivity", "Score Saved")
         }
