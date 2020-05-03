@@ -1,34 +1,47 @@
 package com.wireless.stickie
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_routing_exercise.*
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.layout_topic.*
 import java.util.*
 
-class RoutingExercise : AppCompatActivity() {
-
+class Exercise : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_routing_exercise)
+        setContentView(R.layout.layout_topic)
 
-        routingSolution.setOnClickListener {
-            val mAlertDialog = AlertDialog.Builder(this@RoutingExercise)
-            mAlertDialog.setIcon(R.mipmap.ic_launcher_round) // set alertdialog icon
-            mAlertDialog.setTitle(getString(R.string.solution)) // set alertdialog title
-            mAlertDialog.setMessage(getString(R.string.routingSolution)) // set alertdialog message
-            mAlertDialog.setPositiveButton("OK") { dialog, id ->
-                dialog.dismiss()
-            }
-            mAlertDialog.show()
+
+        topic.text = getString(R.string.exercise)
+
+        model_layer.setOnClickListener {
+            val intent = Intent(this, ModelExercise::class.java)
+            startActivity(intent)
+        }
+
+        arqs.setOnClickListener {
+            val intent = Intent(this, ARQExercise::class.java)
+            startActivity(intent)
+        }
+
+        routing.setOnClickListener{
+            val intent = Intent(this, RoutingExercise::class.java)
+            startActivity(intent)
+        }
+
+        congestion.setOnClickListener{
+            val intent = Intent(this, CongestionExercise::class.java)
+            startActivity(intent)
         }
 
     }
+
     private fun showChangeLang() {
-        val listItems = arrayOf("ภาษาไทย", "English")
-        val mBuilder = AlertDialog.Builder(this@RoutingExercise)
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@Exercise)
         mBuilder.setTitle("Choose Language")
         mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
             if (which == 0) {

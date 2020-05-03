@@ -11,44 +11,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ARQExercise"/>
+        <activity android:name=".MainTopic" />
+        <activity android:name=".Exercise" />
+        <activity android:name=".ARQExercise" />
         <activity android:name=".RoutingExercise" />
         <activity android:name=".CongestionExercise" />
+        <activity android:name=".ModelExercise" />
+
+        <activity android:name=".Learning" />
         <activity
             android:name=".RoutingLearning"
             android:theme="@style/AppTheme.NoActionBarCard" />
+        <activity
+            android:name=".ARQLearning"
+            android:theme="@style/AppTheme.NoActionBarCard" />
+        <activity
+            android:name=".ModelLearning"
+            android:theme="@style/AppTheme.NoActionBarCard" />
+        <activity
+            android:name=".CongestionLearning"
+            android:theme="@style/AppTheme.NoActionBarCard" />
+
         <activity android:name=".ScoreActivity" />
-        <activity android:name=".ResultActivity" />
+        <activity
+            android:name=".ResultActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuestionActivity"
-            android:label="@string/title_activity_question"
+            android:label="@string/quiz"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CategoryQuiz" />
-        <activity
-            android:name=".ModelExercise"
-            android:label="@string/exercise" />
-        <activity
-            android:name=".CongestionControlActivity"
-            android:label="@string/congestion_control_topic" />
-        <activity
-            android:name=".RoutingProtocolsActivity"
-            android:label="@string/routing_protocols_topic" />
-        <activity
-            android:name=".arqsActivity"
-            android:label="@string/arqs_topic" />
-        <activity
-            android:name=".ModelLayerActivity"
-            android:label="@string/model_layer_topic" />
-        <activity android:name=".MainTopic" />
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_Sign_up" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".ARQLearning" />
-        <activity android:name=".ModelLearning" />
-        <activity android:name=".CongestionLearning" />
+
+        <activity android:name=".CategoryQuiz" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,6 +53,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
     </application>
 
 </manifest>

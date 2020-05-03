@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -21,11 +23,11 @@ class MainActivity : AppCompatActivity() {
 //        loadLocate()
         setContentView(R.layout.activity_main)
 
-        langBtn = findViewById(R.id.lang)
-
-        langBtn.setOnClickListener {
-            showChangeLang()
-        }
+//        langBtn = findViewById(R.id.lang)
+//
+//        langBtn.setOnClickListener {
+//            showChangeLang()
+//        }
 
         log_in.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -74,5 +76,19 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
         val language = sharedPreferences.getString("My_Lang", "")
         setLocate(language)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item!!.itemId) {
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+        }
+        return true
     }
 }

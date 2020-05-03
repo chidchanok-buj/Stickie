@@ -15,6 +15,7 @@ import com.wireless.stickie.Common.Common
 import com.wireless.stickie.Interface.IAnswerSelect
 import com.wireless.stickie.Model.CurrentQuestion
 import com.wireless.stickie.Model.Question
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_question.*
 import java.lang.Exception
 
@@ -43,7 +44,7 @@ class QuestionFragment : Fragment(), IAnswerSelect {
         // Inflate the layout for this fragment
         val itemView = inflater.inflate(R.layout.fragment_question, container, false)
 
-        questionIndex = arguments!!.getInt("index", -1)
+        questionIndex = requireArguments().getInt("index", -1)
 
         layout_image = itemView.findViewById(R.id.layout_image) as FrameLayout
 
@@ -181,10 +182,10 @@ class QuestionFragment : Fragment(), IAnswerSelect {
                 ckb_B.setTypeface(null, Typeface.BOLD)
                 ckb_B.setTextColor(Color.RED)
             } else if (answer.equals("C")) {
-                ckb_C.setTypeface(null,Typeface.BOLD)
+                ckb_C.setTypeface(null, Typeface.BOLD)
                 ckb_C.setTextColor(Color.RED)
             } else if (answer.equals("D")) {
-                ckb_D.setTypeface(null,Typeface.BOLD)
+                ckb_D.setTypeface(null, Typeface.BOLD)
                 ckb_D.setTextColor(Color.RED)
             }
         }

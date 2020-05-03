@@ -3,14 +3,19 @@ package com.wireless.stickie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_score.*
 import com.wireless.stickie.Model.Score
 import org.jetbrains.anko.toast
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ScoreActivity : AppCompatActivity() {
@@ -134,5 +139,49 @@ class ScoreActivity : AppCompatActivity() {
     companion object {
 
         private const val TAG = "ScoreActivity"
+    }
+    private fun showChangeLang() {
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@ScoreActivity)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
+            if (which == 0) {
+                setLocate("th")
+                recreate()
+            } else if (which == 1) {
+                setLocate("en")
+                recreate()
+            }
+            dialog.dismiss()
+        }
+
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
+    }
+
+    private fun setLocate(Lang: String?) {
+        val config = resources.configuration
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+        }
+        return true
     }
 }

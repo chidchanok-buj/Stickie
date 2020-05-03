@@ -2,11 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_view_answer"
-        android:title="View Answer"
+        android:title="@string/viewans"
         app:showAsAction="never" />
     <item android:id="@+id/menu_do_quiz_again"
-        android:title="Do Quiz Again"
+        android:title="@string/doitagain"
         app:showAsAction="never" />
-
+    <item android:id="@+id/menu_score"
+        android:title="@string/score"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_lang"
+        android:orderInCategory="100"
+        android:title="@string/lang"
+        app:showAsAction="never" />
 
 </menu>

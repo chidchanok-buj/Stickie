@@ -10,7 +10,7 @@
         android:id="@+id/congestionExercise"
         android:layout_width="385dp"
         android:layout_height="245dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/congestionTitle"
@@ -20,7 +20,7 @@
         android:id="@+id/congestionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="32dp"
         android:text="@string/exercise"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -30,23 +30,23 @@
 
     <TextView
         android:id="@+id/question_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tahoeOrReno"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/congestionExercise" />
 
     <TextView
         android:id="@+id/question_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
         android:text="@string/congestion2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_1" />
 
@@ -54,12 +54,35 @@
         android:id="@+id/btnSolution"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/solution"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/congestionAnswer2"
+        app:layout_constraintVertical_bias="0.842" />
+
+    <EditText
+        android:id="@+id/congestionAnswer2"
+        android:layout_width="322dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Answer"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_2" />
+
+    <EditText
+        android:id="@+id/congestionAnswer1"
+        android:layout_width="322dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Answer"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

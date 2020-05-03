@@ -26,7 +26,7 @@ class CongestionLearning : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_view)
         modelCards = ArrayList()
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.congestion_control_topic), ""))
+        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.congestion_control_topic), getString(R.string.congestionDesc)))
         modelCards.add(
             ModelCard(
                 R.drawable.empty,
@@ -60,8 +60,7 @@ class CongestionLearning : AppCompatActivity() {
             resources.getColor(R.color.color1),
             resources.getColor(R.color.color2),
             resources.getColor(R.color.color3),
-            resources.getColor(R.color.color4),
-            resources.getColor(R.color.color1)
+            resources.getColor(R.color.color4)
         )
 
         colors = color_temp
@@ -78,7 +77,7 @@ class CongestionLearning : AppCompatActivity() {
                             positionOffset,
                             colors!![position],
                             colors!![position + 1]
-                        ) as Int)!!
+                        ) as Int)
                     )
                 } else {
                     viewPager.setBackgroundColor(colors!![colors!!.size - 1])

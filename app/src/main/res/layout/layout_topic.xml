@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CongestionControlActivity">
+    tools:context=".Learning">
 
     <TextView
         android:id="@+id/topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="@string/congestion_control_topic"
+        android:text="@string/learning"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -21,48 +21,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/learning"
+        android:id="@+id/model_layer"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
-        android:text="@string/learning"
+        android:text="@string/model_layer_topic"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/exercise"
+        app:layout_constraintBottom_toTopOf="@+id/arqs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/exercise"
+        android:id="@+id/arqs"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
-        android:text="@string/exercise"
+        android:text="@string/arqs_topic"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/quiz"
+        app:layout_constraintBottom_toTopOf="@+id/routing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/quiz"
+        android:id="@+id/routing"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_white_darkorange_button"
-        android:text="@string/quiz"
+        android:text="@string/routing_protocols_topic"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/score"
+        app:layout_constraintBottom_toTopOf="@+id/congestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/score"
+        android:id="@+id/congestion"
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="156dp"
         android:background="@drawable/rounded_white_darkorange_button"
-        android:text="@string/score"
+        android:text="@string/congestion_control_topic"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

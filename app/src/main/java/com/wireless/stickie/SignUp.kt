@@ -3,8 +3,11 @@ package com.wireless.stickie
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -164,6 +167,51 @@ class SignUp : AppCompatActivity() {
         } catch (e: ApiException) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun showChangeLang() {
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@SignUp)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
+            if (which == 0) {
+                setLocate("th")
+                recreate()
+            } else if (which == 1) {
+                setLocate("en")
+                recreate()
+            }
+            dialog.dismiss()
+        }
+
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
+    }
+
+    private fun setLocate(Lang: String?) {
+        val config = resources.configuration
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+        }
+        return true
     }
 
 //    private fun showSignInOptions() {

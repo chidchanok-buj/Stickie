@@ -53,7 +53,8 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private var countDownTimer: CountDownTimer? = null
     var time_play = Common.TOTAL_TIME
     var isAnswerModeView = false
-    lateinit var adapter: GridAnswerAdapter
+
+    //    lateinit var adapter: GridAnswerAdapter
     lateinit var txt_wrong_answer: TextView
     lateinit var questionHelperAdapter: QuestionListHelperAdapter
     var goToQuestionNum: BroadcastReceiver = object : BroadcastReceiver() {
@@ -68,19 +69,15 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         }
 
     }
-    private lateinit var appBarConfiguration: AppBarConfiguration
+//    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(goToQuestionNum)
         if (countDownTimer != null) {
             countDownTimer!!.cancel()
         }
-        if (Common.fragmentList != null) {
-            Common.fragmentList.clear()
-        }
-        if (Common.answerSheetList != null) {
-            Common.answerSheetList.clear()
-        }
+        Common.fragmentList.clear()
+        Common.answerSheetList.clear()
         super.onDestroy()
     }
 
@@ -104,12 +101,12 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         btn_done.setOnClickListener {
             if (!isAnswerModeView) {
                 MaterialStyledDialog.Builder(this@QuestionActivity)
-                    .setTitle("Finish ?")
-                    .setDescription("Do you really want to finish ?")
+                    .setTitle(getString(R.string.finish))
+                    .setDescription(getString(R.string.reallyfinish))
                     .setIcon(R.drawable.ic_mood_white_24dp)
-                    .setNegativeText("No")
+                    .setNegativeText(getString(R.string.no))
                     .onNegative { dialog, which -> dialog.dismiss() }
-                    .setPositiveText("Yes")
+                    .setPositiveText(getString(R.string.no))
                     .onPositive { dialog, which ->
                         finishGame()
                         drawer_layout.closeDrawer(Gravity.LEFT)
@@ -125,7 +122,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         genQuestion()
         if (Common.questionList.size > 0) {
             txt_timer.visibility = View.VISIBLE
-            txt_right_answer.visibility = View.VISIBLE
+//            txt_right_answer.visibility = View.VISIBLE
 
             countTimer()
 
@@ -138,9 +135,9 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     if (Common.questionList.size > 5) Common.questionList.size / 2 else Common.questionList.size
                 )
             }
-            adapter = GridAnswerAdapter(this, Common.answerSheetList)
-
-            grid_answer.adapter = adapter
+//            adapter = GridAnswerAdapter(this, Common.answerSheetList)
+//
+//            grid_answer.adapter = adapter
 
             // Gen fragment list
             genFragmentList()
@@ -212,7 +209,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                         // In case of wanting to show the correct answer, just enable it
                         val question_state = questionFragment.selectedAnswer()
                         Common.answerSheetList[position] = question_state
-                        adapter.notifyDataSetChanged()
+//                        adapter.notifyDataSetChanged()
                         questionHelperAdapter.notifyDataSetChanged()
 
                         countCorrectAnswer()
@@ -221,10 +218,10 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                             ("${Common.right_answer_count} / ${Common.questionList.size}")
                         txt_wrong_answer.text = "${Common.wrong_answer_count}"
 
-                        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
-                            questionFragment.showCorrectAnswer()
-                            questionFragment.disableAnswer()
-                        }
+//                        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
+//                            questionFragment.showCorrectAnswer()
+//                            questionFragment.disableAnswer()
+//                        }
                     }
                 }
 
@@ -239,25 +236,25 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                    .setAction("Action", null).show()
 //        }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
-        val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, 0, 0
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+//        val toggle = ActionBarDrawerToggle(
+//            this, drawerLayout, toolbar, 0, 0
+//        )
+//        drawerLayout.addDrawerListener(toggle)
+//        toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+//            ), drawerLayout
+//        )
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
@@ -307,12 +304,12 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     "%02d:%02d",
                     TimeUnit.MILLISECONDS.toMinutes(interval),
                     TimeUnit.MILLISECONDS.toSeconds(interval) - TimeUnit.MINUTES.toSeconds(
-                            TimeUnit.MILLISECONDS.toMinutes(
-                                interval
-                            )
+                        TimeUnit.MILLISECONDS.toMinutes(
+                            interval
                         )
                     )
                 )
+                        )
                 time_play -= 1000
             }
         }.start()
@@ -323,7 +320,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         val questionFragment = Common.fragmentList[position]
         val question_state = questionFragment.selectedAnswer()
         Common.answerSheetList[position] = question_state
-        adapter.notifyDataSetChanged()
+//        adapter.notifyDataSetChanged()
         questionHelperAdapter.notifyDataSetChanged()
 
         countCorrectAnswer()
@@ -331,10 +328,17 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         txt_right_answer.text = ("${Common.right_answer_count} / ${Common.questionList.size}")
         txt_wrong_answer.text = "${Common.wrong_answer_count}"
 
-        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
-            questionFragment.showCorrectAnswer()
-            questionFragment.disableAnswer()
-        }
+//        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
+        questionFragment.showCorrectAnswer()
+        questionFragment.disableAnswer()
+//        }
+//        for (i in Common.fragmentList.indices) {
+//            Common.fragmentList[i].disableAnswer()
+//            Common.fragmentList[i].showCorrectAnswer()
+//        }
+
+        countDownTimer!!.cancel()
+        txt_timer.visibility = View.GONE
 
         val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
         Common.timer = Common.TOTAL_TIME - time_play
@@ -377,6 +381,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         val layout = item.actionView as ConstraintLayout
         txt_wrong_answer = layout.findViewById(R.id.txt_wrong_answer) as TextView
         txt_wrong_answer.text = 0.toString()
+
         return true
     }
 
@@ -388,7 +393,8 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+//        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        return false
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -416,7 +422,6 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        toast("How do I taost resultCode")
         if (resultCode == CODE_GET_RESULT) {
             if (resultCode == Activity.RESULT_OK) {
                 val action = data!!.getStringExtra("action")
@@ -449,7 +454,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                             Common.answerSheetList[i].type = Common.ANSWER_TYPE.NO_ANSWER
                         }
 
-                        adapter.notifyDataSetChanged()
+//                        adapter.notifyDataSetChanged()
                         questionHelperAdapter.notifyDataSetChanged()
                         countTimer()
 

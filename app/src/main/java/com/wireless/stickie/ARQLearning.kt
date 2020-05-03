@@ -22,11 +22,41 @@ class ARQLearning : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_view)
         modelCards = ArrayList()
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.arqs_topic), getString(R.string.whatIsARQs)))
-        modelCards.add(ModelCard(R.drawable.sliding, getString(R.string.flowControl), getString(R.string.flowControlDes)))
-        modelCards.add(ModelCard(R.drawable.stopnwait, getString(R.string.stopAndWait), getString(R.string.stopAndWaitDesc)))
-        modelCards.add(ModelCard(R.drawable.go_back, getString(R.string.goBack), getString(R.string.goBackDesc)))
-        modelCards.add(ModelCard(R.drawable.selective, getString(R.string.selective), getString(R.string.selectiveDesc)))
+        modelCards.add(
+            ModelCard(
+                R.drawable.empty,
+                getString(R.string.arqs_topic),
+                getString(R.string.whatIsARQs)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.sliding,
+                getString(R.string.flowControl),
+                getString(R.string.flowControlDes)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.stopnwait,
+                getString(R.string.stopAndWait),
+                getString(R.string.stopAndWaitDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.go_back,
+                getString(R.string.goBack),
+                getString(R.string.goBackDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.selective,
+                getString(R.string.selective),
+                getString(R.string.selectiveDesc)
+            )
+        )
 
         adapter = CardAdapter(modelCards, this)
 
@@ -39,7 +69,7 @@ class ARQLearning : AppCompatActivity() {
             resources.getColor(R.color.color2),
             resources.getColor(R.color.color3),
             resources.getColor(R.color.color4),
-            resources.getColor(R.color.color1)
+            resources.getColor(R.color.color5)
         )
 
         colors = color_temp
@@ -56,7 +86,7 @@ class ARQLearning : AppCompatActivity() {
                             positionOffset,
                             colors!![position],
                             colors!![position + 1]
-                        ) as Int)!!
+                        ) as Int)
                     )
                 } else {
                     viewPager.setBackgroundColor(colors!![colors!!.size - 1])

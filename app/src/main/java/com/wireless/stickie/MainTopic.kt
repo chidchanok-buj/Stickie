@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -11,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main_topic.*
 import org.jetbrains.anko.toast
+import java.util.*
 
 
 class MainTopic : AppCompatActivity() {
@@ -50,23 +54,23 @@ class MainTopic : AppCompatActivity() {
             }
         }
 
-        model_layer.setOnClickListener {
-            val intent = Intent(this, ModelLayerActivity::class.java)
+        learning.setOnClickListener {
+            val intent = Intent(this, Learning::class.java)
             startActivity(intent)
         }
 
-        arqs.setOnClickListener {
-            val intent = Intent(this, arqsActivity::class.java)
+        exercise.setOnClickListener {
+            val intent = Intent(this, Exercise::class.java)
             startActivity(intent)
         }
 
-        routing.setOnClickListener {
-            val intent = Intent(this, RoutingProtocolsActivity::class.java)
+        quiz.setOnClickListener {
+            val intent = Intent(this, CategoryQuiz::class.java)
             startActivity(intent)
         }
 
-        congestion.setOnClickListener {
-            val intent = Intent(this, CongestionControlActivity::class.java)
+        score.setOnClickListener {
+            val intent = Intent(this, ScoreActivity::class.java)
             startActivity(intent)
         }
 
@@ -97,6 +101,51 @@ class MainTopic : AppCompatActivity() {
             moveTaskToBack(true)
         }
         return super.onKeyDown(keyCode, event)
+    }
+
+    private fun showChangeLang() {
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@MainTopic)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
+            if (which == 0) {
+                setLocate("th")
+                recreate()
+            } else if (which == 1) {
+                setLocate("en")
+                recreate()
+            }
+            dialog.dismiss()
+        }
+
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
+    }
+
+    private fun setLocate(Lang: String?) {
+        val config = resources.configuration
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+        }
+        return true
     }
 
 }

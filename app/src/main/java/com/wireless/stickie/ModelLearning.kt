@@ -2,11 +2,15 @@ package com.wireless.stickie
 
 import android.animation.ArgbEvaluator
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.wireless.stickie.Adapter.CardAdapter
 import com.wireless.stickie.Model.ModelCard
+import java.util.*
 import kotlin.collections.ArrayList
 
 class ModelLearning : AppCompatActivity() {
@@ -22,12 +26,42 @@ class ModelLearning : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_view)
         modelCards = ArrayList()
-        modelCards.add(ModelCard(R.drawable.solution, getString(R.string.model_layer_topic), ""))
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.physical), getString(R.string.physicalDesc)))
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.data), getString(R.string.dataDesc)))
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.network), getString(R.string.networkDesc)))
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.transport), getString(R.string.transportDesc)))
-        modelCards.add(ModelCard(R.drawable.empty, getString(R.string.application), getString(R.string.applicationDesc)))
+        modelCards.add(ModelCard(R.drawable.tcplayer, getString(R.string.model_layer_topic), ""))
+        modelCards.add(
+            ModelCard(
+                R.drawable.physical,
+                getString(R.string.physical),
+                getString(R.string.physicalDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.data,
+                getString(R.string.data),
+                getString(R.string.dataDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.network,
+                getString(R.string.network),
+                getString(R.string.networkDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.transport,
+                getString(R.string.transport),
+                getString(R.string.transportDesc)
+            )
+        )
+        modelCards.add(
+            ModelCard(
+                R.drawable.application,
+                getString(R.string.application),
+                getString(R.string.applicationDesc)
+            )
+        )
 
         adapter = CardAdapter(modelCards, this)
 
@@ -37,9 +71,10 @@ class ModelLearning : AppCompatActivity() {
 
         val color_temp = arrayOf(
             resources.getColor(R.color.color1),
-            resources.getColor(R.color.color2),
+            resources.getColor(R.color.color5),
             resources.getColor(R.color.color3),
             resources.getColor(R.color.color4),
+            resources.getColor(R.color.color2),
             resources.getColor(R.color.color1)
         )
 
@@ -57,7 +92,7 @@ class ModelLearning : AppCompatActivity() {
                             positionOffset,
                             colors!![position],
                             colors!![position + 1]
-                        ) as Int)!!
+                        ) as Int)
                     )
                 } else {
                     viewPager.setBackgroundColor(colors!![colors!!.size - 1])
@@ -68,5 +103,7 @@ class ModelLearning : AppCompatActivity() {
             override fun onPageScrollStateChanged(state: Int) {}
         })
     }
+
+
 }
 

@@ -2,10 +2,14 @@ package com.wireless.stickie
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.toast
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -59,5 +63,50 @@ class LoginActivity : AppCompatActivity() {
 //        signup.setOnClickListener { startActivity(Intent(this@LoginActivity, SignUp::class.java)) }
 
 //        login_backBtn.setOnClickListener { onBackPressed() }
+    }
+
+    private fun showChangeLang() {
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@LoginActivity)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
+            if (which == 0) {
+                setLocate("th")
+                recreate()
+            } else if (which == 1) {
+                setLocate("en")
+                recreate()
+            }
+            dialog.dismiss()
+        }
+
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
+    }
+
+    private fun setLocate(Lang: String?) {
+        val config = resources.configuration
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+        }
+        return true
     }
 }

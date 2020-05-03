@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
@@ -23,7 +24,9 @@ import com.wireless.stickie.Common.SpacesItemDecoration
 import com.wireless.stickie.Model.Score
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.toast
+import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
 
 class ResultActivity : AppCompatActivity() {
 
@@ -34,12 +37,6 @@ class ResultActivity : AppCompatActivity() {
     private var aa: ArrayAdapter<Int>? = null
     var percentage = 0
 
-    override fun onDestroy() {
-        LocalBroadcastManager.getInstance(this@ResultActivity)
-            .unregisterReceiver(backToQuestion)
-        super.onDestroy()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
@@ -47,11 +44,11 @@ class ResultActivity : AppCompatActivity() {
         LocalBroadcastManager.getInstance(this@ResultActivity)
             .registerReceiver(backToQuestion, IntentFilter(Common.KEY_BACK_FROM_RESULT))
 
-        toolbar.title = "RESULT"
-//        setSupportActionBar(toolbar)
+//        toolbar.title = "RESULT"
+        setSupportActionBar(toolbar)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
+//        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         //
         txt_time.text = (java.lang.String.format(
@@ -77,13 +74,13 @@ class ResultActivity : AppCompatActivity() {
         percentage = percent
         saveScore()
         if (percent > 80) {
-            txt_result.text = "EXCELLENT"
+            txt_result.text = getString(R.string.excellent)
         } else if (percent > 70) {
-            txt_result.text = "GOOD"
+            txt_result.text = getString(R.string.good)
         } else if (percent > 60) {
-            txt_result.text = "FAIR"
+            txt_result.text = getString(R.string.fair)
         } else {
-            txt_result.text = "Try Again :)"
+            txt_result.text = getString(R.string.tryagain)
         }
 
         // Event Button
@@ -132,6 +129,51 @@ class ResultActivity : AppCompatActivity() {
         recycler_result.layoutManager = GridLayoutManager(this, 4)
         recycler_result.addItemDecoration(SpacesItemDecoration(4))
         recycler_result.adapter = adapter
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item!!.itemId) {
+            R.id.menu_do_quiz_again -> doQuizAgain()
+            R.id.menu_view_answer -> viewAnswer()
+            android.R.id.home -> {
+                val intent = Intent(applicationContext, CategoryQuiz::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent) // Go back to Category when the user clicks on back arrow on ResultActivity
+            }
+            R.id.menu_score -> {
+                val intent = Intent(this, ScoreActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.action_lang -> {
+                showChangeLang()
+            }
+
+        }
+        return true
+    }
+
+    private fun viewAnswer() {
+        val returnIntent = Intent()
+        returnIntent.putExtra("action", "viewanswer")
+        setResult(Activity.RESULT_OK, returnIntent)
+        finish()
+    }
+
+    private fun doQuizAgain() {
+        MaterialStyledDialog.Builder(this@ResultActivity)
+            .setTitle(getString(R.string.doquizagain))
+            .setDescription(getString(R.string.againreally))
+            .setIcon(R.drawable.ic_mood_white_24dp)
+            .setNegativeText(getString(R.string.no))
+            .onNegative { dialog, which -> dialog.dismiss() }
+            .setPositiveText(getString(R.string.yes))
+            .onPositive { dialog, which ->
+                val returnIntent = Intent()
+                returnIntent.putExtra("action", "doquizagain")
+                setResult(Activity.RESULT_OK, returnIntent)
+                finish()
+            }
+            .show()
     }
 
     // Save score to Firebase
@@ -185,40 +227,41 @@ class ResultActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item!!.itemId) {
-            R.id.menu_do_quiz_again -> doQuizAgain()
-            R.id.menu_view_answer -> viewAnswer()
-            android.R.id.home -> {
-                val intent = Intent(applicationContext, CategoryQuiz::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                startActivity(intent) // Go back to Category when the user clicks on back arrow on ResultActivity
+
+    private fun showChangeLang() {
+        val listItems = arrayOf("ภาษาไทย","English")
+        val mBuilder = AlertDialog.Builder(this@ResultActivity)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItems, -1) { dialog, which ->
+            if (which == 0) {
+                setLocate("th")
+                recreate()
+            } else if (which == 1) {
+                setLocate("en")
+                recreate()
             }
+            dialog.dismiss()
         }
-        return true
+
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
     }
 
-    private fun viewAnswer() {
-        val returnIntent = Intent()
-        returnIntent.putExtra("action", "viewanswer")
-        setResult(Activity.RESULT_OK, returnIntent)
-        finish()
+    private fun setLocate(Lang: String?) {
+        val config = resources.configuration
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
     }
 
-    private fun doQuizAgain() {
-        MaterialStyledDialog.Builder(this@ResultActivity)
-            .setTitle("Do quiz again ?")
-            .setDescription("Do you really want to delete this data ?")
-            .setIcon(R.drawable.ic_mood_white_24dp)
-            .setNegativeText("No")
-            .onNegative { dialog, which -> dialog.dismiss() }
-            .setPositiveText("Yes")
-            .onPositive { dialog, which ->
-                val returnIntent = Intent()
-                returnIntent.putExtra("action", "doquizagain")
-                setResult(Activity.RESULT_OK, returnIntent)
-                finish()
-            }
-            .show()
+    override fun onDestroy() {
+        LocalBroadcastManager.getInstance(this@ResultActivity)
+            .unregisterReceiver(backToQuestion)
+        super.onDestroy()
     }
 }
