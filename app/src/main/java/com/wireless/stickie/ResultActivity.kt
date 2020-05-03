@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.wireless.stickie.Adapter.ResultGridAdapter
@@ -21,6 +22,7 @@ import com.wireless.stickie.Common.Common
 import com.wireless.stickie.Common.SpacesItemDecoration
 import com.wireless.stickie.Model.Score
 import kotlinx.android.synthetic.main.activity_result.*
+import org.jetbrains.anko.toast
 import java.util.concurrent.TimeUnit
 
 class ResultActivity : AppCompatActivity() {
@@ -135,11 +137,20 @@ class ResultActivity : AppCompatActivity() {
     // Save score to Firebase
     private fun saveScore() {
         mAuth = FirebaseAuth.getInstance()
-
+        val acct = GoogleSignIn.getLastSignedInAccount(this)
         val user = mAuth!!.currentUser
         scores = ArrayList()
         aa = ArrayAdapter(this, android.R.layout.simple_list_item_1, scores!!)
-        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
+        lateinit var ref: DatabaseReference
+        if (user != null) {
+            ref = FirebaseDatabase.getInstance().getReference(user.displayName.toString())
+        } else if (acct != null) {
+            ref = FirebaseDatabase.getInstance().getReference(acct.displayName.toString())
+        } else {
+            toast("Guest cannot see the score")
+            finish()
+        }
+//        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
 
 //        val id = ref.push().key
         val id = Common.selectedCategory!!.id

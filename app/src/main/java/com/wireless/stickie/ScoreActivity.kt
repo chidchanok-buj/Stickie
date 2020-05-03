@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_score.*
@@ -40,6 +41,7 @@ class ScoreActivity : AppCompatActivity() {
         listView!!.adapter = aa
         sub!!.adapter = bb
 
+        val acct = GoogleSignIn.getLastSignedInAccount(this)
 
 //         Get post key from intent
 //        postKey = intent.getStringExtra(EXTRA_POST_KEY)
@@ -48,17 +50,22 @@ class ScoreActivity : AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
 
         // Initialize Database
-        postReference = firebaseDatabase.getReference(user!!.displayName.toString())
+        if (user != null) {
+            postReference = firebaseDatabase.getReference(user.displayName.toString())
+        } else if (acct != null) {
+            postReference = firebaseDatabase.getReference(acct.displayName.toString())
+        } else {
+            toast("Guest cannot see the score")
+            finish()
+        }
 
         // Add value event listener to the post
         // [START post_value_event_listener]
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Get Post object and use the values to update the UI
-                Log.d("ScoreActivity", "If")
                 if (dataSnapshot.exists()) {
                     for (sco in dataSnapshot.children) {
-                        Log.d("ScoreActivity", "For")
                         val score = sco.getValue(Score::class.java)!!
                         scores!!.add(0, score.percentage)
                         subjects!!.add(0, score.name.toString())
@@ -76,11 +83,17 @@ class ScoreActivity : AppCompatActivity() {
 
             }
         }
-        postReference.addValueEventListener(postListener)
+        if (user != null || acct != null) {
+            postReference.addValueEventListener(postListener)
+            this.postListener = postListener
+        } else {
+            finish()
+        }
+//        postReference.addValueEventListener(postListener)
         // [END post_value_event_listener]
 
         // Keep copy of post listener so we can remove it when app stops
-        this.postListener = postListener
+//        this.postListener = postListener
 
         clear.setOnClickListener {
             clearScore()
@@ -93,9 +106,18 @@ class ScoreActivity : AppCompatActivity() {
 
     private fun clearScore() {
         mAuth = FirebaseAuth.getInstance()
-
+        val acct = GoogleSignIn.getLastSignedInAccount(this)
         val user = mAuth!!.currentUser
-        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
+        lateinit var ref: DatabaseReference
+        if (user != null) {
+            ref = FirebaseDatabase.getInstance().getReference(user.displayName.toString())
+        } else if (acct != null) {
+            ref = FirebaseDatabase.getInstance().getReference(acct.displayName.toString())
+        } else {
+            toast("Guest cannot see the score")
+            finish()
+        }
+//        val ref = FirebaseDatabase.getInstance().getReference(user!!.displayName.toString())
         ref.removeValue()
         aa!!.notifyDataSetChanged()
         bb!!.notifyDataSetChanged()
