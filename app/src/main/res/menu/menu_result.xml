@@ -4,9 +4,9 @@
     <item android:id="@+id/menu_view_answer"
         android:title="@string/viewans"
         app:showAsAction="never" />
-    <item android:id="@+id/menu_do_quiz_again"
-        android:title="@string/doitagain"
-        app:showAsAction="never" />
+<!--    <item android:id="@+id/menu_do_quiz_again"-->
+<!--        android:title="@string/doitagain"-->
+<!--        app:showAsAction="never" />-->
     <item android:id="@+id/menu_score"
         android:title="@string/score"
         app:showAsAction="never" />

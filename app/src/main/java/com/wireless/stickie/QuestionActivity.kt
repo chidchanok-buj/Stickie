@@ -14,14 +14,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +27,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.google.gson.Gson
-import com.wireless.stickie.Adapter.GridAnswerAdapter
 import com.wireless.stickie.Adapter.MyFragmentAdapter
 import com.wireless.stickie.Adapter.QuestionListHelperAdapter
 import com.wireless.stickie.Common.Common
@@ -182,8 +176,14 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     p1: Float,
                     p2: Int
                 ) {
+                    val questionFragment: QuestionFragment
                     if (isScrollDirectionUndetermined) {
                         setScrollingDirection(p1)
+                    }
+                    if ((p0 != null) && !txt_timer.isShown) {
+                        questionFragment = Common.fragmentList[p0]
+                        questionFragment.showCorrectAnswer()
+                        questionFragment.disableAnswer()
                     }
                 }
 
@@ -218,10 +218,10 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                             ("${Common.right_answer_count} / ${Common.questionList.size}")
                         txt_wrong_answer.text = "${Common.wrong_answer_count}"
 
-//                        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
-//                            questionFragment.showCorrectAnswer()
-//                            questionFragment.disableAnswer()
-//                        }
+                        if ((p0 != null) && !txt_timer.isShown) {
+                            questionFragment.showCorrectAnswer()
+                            questionFragment.disableAnswer()
+                        }
                     }
                 }
 
@@ -318,8 +318,8 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private fun finishGame() {
         val position = view_pager.currentItem
         val questionFragment = Common.fragmentList[position]
-        val question_state = questionFragment.selectedAnswer()
-        Common.answerSheetList[position] = question_state
+        val questionState = questionFragment.selectedAnswer()
+        Common.answerSheetList[position] = questionState
 //        adapter.notifyDataSetChanged()
         questionHelperAdapter.notifyDataSetChanged()
 
@@ -328,13 +328,13 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         txt_right_answer.text = ("${Common.right_answer_count} / ${Common.questionList.size}")
         txt_wrong_answer.text = "${Common.wrong_answer_count}"
 
-//        if (question_state.type == Common.ANSWER_TYPE.NO_ANSWER) {
+//        if (questionState.type == Common.ANSWER_TYPE.NO_ANSWER) {
         questionFragment.showCorrectAnswer()
         questionFragment.disableAnswer()
 //        }
 //        for (i in Common.fragmentList.indices) {
-//            Common.fragmentList[i].disableAnswer()
-//            Common.fragmentList[i].showCorrectAnswer()
+//                Common.fragmentList[i].disableAnswer()
+//                Common.fragmentList[i].showCorrectAnswer()
 //        }
 
         countDownTimer!!.cancel()
@@ -435,49 +435,25 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     txt_wrong_answer.visibility = View.GONE
                     txt_right_answer.visibility = View.GONE
                     txt_timer.visibility = View.GONE
-                } else {
-                    if (action == "doquizagain") {
-                        // TODO REMOVE TOAST
-                        // Seems like "action doesn't work"
-                        view_pager.currentItem = 0
-                        isAnswerModeView = false
+                } else if (action == "viewanswer") {
+                    // TODO REMOVE TOAST
+                    // Seems like
+                    toast("action == \"viewanswer\"")
+                    view_pager.currentItem = 0
+                    isAnswerModeView = true
+                    countDownTimer!!.cancel()
 
-                        txt_wrong_answer.visibility = View.VISIBLE
-                        txt_right_answer.visibility = View.VISIBLE
-                        txt_timer.visibility = View.VISIBLE
-
-                        for (i in Common.fragmentList.indices) {
-                            Common.fragmentList[i].resetQuestion()
-                        }
-
-                        for (i in Common.answerSheetList.indices) {
-                            Common.answerSheetList[i].type = Common.ANSWER_TYPE.NO_ANSWER
-                        }
-
-//                        adapter.notifyDataSetChanged()
-                        questionHelperAdapter.notifyDataSetChanged()
-                        countTimer()
-
-
-                    } else if (action == "viewanswer") {
-                        // TODO REMOVE TOAST
-                        // Seems like
-                        toast("action == \"viewanswer\"")
-                        view_pager.currentItem = 0
-                        isAnswerModeView = true
-                        countDownTimer!!.cancel()
-
-                        for (i in Common.fragmentList.indices) {
-                            Common.fragmentList[i].disableAnswer()
-                            Common.fragmentList[i].showCorrectAnswer()
-                        }
-                        txt_wrong_answer.visibility = View.GONE
-                        txt_right_answer.visibility = View.GONE
-                        txt_timer.visibility = View.GONE
-
+                    for (i in Common.fragmentList.indices) {
+                        Common.fragmentList[i].disableAnswer()
+                        Common.fragmentList[i].showCorrectAnswer()
                     }
+                    txt_wrong_answer.visibility = View.GONE
+                    txt_right_answer.visibility = View.GONE
+                    txt_timer.visibility = View.GONE
+
                 }
             }
+
         }
         super.onActivityResult(requestCode, resultCode, data)
     }

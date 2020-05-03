@@ -133,7 +133,7 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item!!.itemId) {
-            R.id.menu_do_quiz_again -> doQuizAgain()
+//            R.id.menu_do_quiz_again -> doQuizAgain()
             R.id.menu_view_answer -> viewAnswer()
             android.R.id.home -> {
                 val intent = Intent(applicationContext, CategoryQuiz::class.java)
