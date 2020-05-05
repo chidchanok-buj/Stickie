@@ -15,28 +15,7 @@ class RoutingProtocolsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_topic)
         topic.text = getString(R.string.routing_protocols_topic)
-//        TODO
 
-//
-//        learning.setOnClickListener {
-//            val intent = Intent(this, RoutingLearning::class.java)
-//            startActivity(intent)
-//        }
-//
-//        exercise.setOnClickListener {
-//            val intent = Intent(this, RoutingExercise::class.java)
-//            startActivity(intent)
-//        }
-//
-//        quiz.setOnClickListener{
-//            val intent = Intent(this, CategoryQuiz::class.java)
-//            startActivity(intent)
-//        }
-//
-//        score.setOnClickListener{
-//            val intent = Intent(this, ScoreActivity::class.java)
-//            startActivity(intent)
-//        }
     }
     private fun showChangeLang() {
         val listItems = arrayOf("ภาษาไทย","English")

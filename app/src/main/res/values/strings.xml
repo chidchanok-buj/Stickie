@@ -142,7 +142,6 @@ until the tree is pruned.
     <string name="reno">Reno</string>
     <string name="renoDesc">A fast retransmit is sent, half of the current CWND is saved as ssthresh and as new CWND, thus skipping slow start and going directly to the congestion avoidance algorithm. The overall algorithm here is called fast recovery.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tahoeOrReno">Tahoe or Reno ?</string>
     <string name="congestion2">Packet loss are occurred by

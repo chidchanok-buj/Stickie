@@ -402,12 +402,12 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.menu_done -> {
                 if (!isAnswerModeView) {
                     MaterialStyledDialog.Builder(this@QuestionActivity)
-                        .setTitle("Finish ?")
-                        .setDescription("Do you really want to finish ?")
+                        .setTitle(getString(R.string.finish))
+                        .setDescription(getString(R.string.reallyfinish))
                         .setIcon(R.drawable.ic_mood_white_24dp)
-                        .setNegativeText("No")
+                        .setNegativeText(getString(R.string.no))
                         .onNegative { dialog, which -> dialog.dismiss() }
-                        .setPositiveText("Yes")
+                        .setPositiveText(getString(R.string.yes))
                         .onPositive { dialog, which ->
                             finishGame()
                             drawer_layout.closeDrawer(Gravity.LEFT)
@@ -436,9 +436,7 @@ class QuestionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     txt_right_answer.visibility = View.GONE
                     txt_timer.visibility = View.GONE
                 } else if (action == "viewanswer") {
-                    // TODO REMOVE TOAST
-                    // Seems like
-                    toast("action == \"viewanswer\"")
+
                     view_pager.currentItem = 0
                     isAnswerModeView = true
                     countDownTimer!!.cancel()

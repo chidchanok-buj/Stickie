@@ -11,14 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainTopic" />
-        <activity android:name=".Exercise" />
-        <activity android:name=".ARQExercise" />
-        <activity android:name=".RoutingExercise" />
-        <activity android:name=".CongestionExercise" />
-        <activity android:name=".ModelExercise" />
+        <activity
+            android:name=".MainTopic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Exercise"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ARQExercise"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RoutingExercise"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CongestionExercise"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ModelExercise"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".Learning" />
+        <activity
+            android:name=".Learning"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RoutingLearning"
             android:theme="@style/AppTheme.NoActionBarCard" />
@@ -39,14 +53,18 @@
         <activity
             android:name=".QuestionActivity"
             android:label="@string/quiz"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignUp"
-            android:label="@string/title_activity_Sign_up" />
+            android:label="@string/title_activity_Sign_up"
+            android:screenOrientation="portrait" />
 
         <activity android:name=".CategoryQuiz" />
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,7 +73,8 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

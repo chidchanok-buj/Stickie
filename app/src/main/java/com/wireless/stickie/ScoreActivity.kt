@@ -68,7 +68,10 @@ class ScoreActivity : AppCompatActivity() {
         // [START post_value_event_listener]
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Get Post object and use the values to update the UI
+                // Get Post object and use t
+                //
+                //
+                // he values to update the UI
                 if (dataSnapshot.exists()) {
                     for (sco in dataSnapshot.children) {
                         val score = sco.getValue(Score::class.java)!!
